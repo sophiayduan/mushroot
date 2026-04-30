@@ -9,19 +9,23 @@ import m6 from "../../assets/mini-mush-6.png";
 import sideDark from "../../assets/hero-sidebar.png";
 import titleLogo from "../../assets/title-logo.png";
 
-import cloud1 from "../../assets/cloud-1.png";
-import cloud2 from "../../assets/cloud-2.png";
-import cloud3 from "../../assets/cloud-3.png";
-import cloud4 from "../../assets/cloud-4.png";
+import catCloud1 from "../../assets/cat-cloud-1.png";
+import catCloud2 from "../../assets/cat-cloud-2.png";
+import catCloud3 from "../../assets/cat-cloud-3.png";
+import genCloud1 from "../../assets/general-cloud-1.png";
+import genCloud2 from "../../assets/general-cloud-2.png";
 
 function Hero() {
     return(
         <div className = "hero">
             <div className = "clouds">
-                <img className = "cloud cloud-1" src={cloud1} />
-                <img className = "cloud cloud-2" src={cloud2}/>
-                <img className = "cloud cloud-3" src={cloud3}/>
-                <img className = "cloud cloud-4" src={cloud4}/>
+                <img className = "cloud cat-cloud-1" src={catCloud1} />
+                <img className = "cloud cat-cloud-2" src={catCloud2} />
+                <img className = "cloud cat-cloud-3" src={catCloud3} />
+                <img className = "cloud gen-cloud-1" src={genCloud1}/>
+                <img className = "cloud gen-cloud-2" src={genCloud2}/>
+
+
             </div>
 
             <div className = "hills">
