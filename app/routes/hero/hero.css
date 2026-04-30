@@ -32,10 +32,10 @@ body{
     width: 200%;
     height: 100%;
     left: -100vw;
-    top: 20vh;
+    top: 30vh;
     border-radius: 50%;
 
-    background: linear-gradient(180deg, #BECCC0 0%, #5F6660 100%);
+    background: linear-gradient(180deg, var(--green) 0%, var(--green) 50%);
     box-shadow: 3px 4px 10px 10px rgba(0, 0, 0, 0.25);
 }
 
@@ -44,10 +44,10 @@ body{
     width: 200%;
     height: 100%;
     right: -100vw;
-    top: 40vh;
+    top: 45vh;
     border-radius: 50%;
 
-    background: linear-gradient(180deg, #7E9278 0%, #5F6660 100%);
+    background: linear-gradient(180deg, var(--green-mid) 0%, var(--green-mid-dark) 50%);
     box-shadow: 3px 4px 10px 10px rgba(0, 0, 0, 0.25);
 }
 
@@ -59,7 +59,7 @@ body{
     top: 60vh;
     border-radius: 50%;
 
-    background: linear-gradient(180deg, #ADC8B1 0%, #67776A 28.85%);
+    background: linear-gradient(180deg, var(--green-mid-dark) 0%, var(--green-dark) 50%);
     box-shadow: 3px 4px 10px 10px rgba(0, 0, 0, 0.25);
 
 }
@@ -72,4 +72,94 @@ body{
     height: 80%;
     max-height: 80vh;
     width: auto;
+}
+
+.cloud {
+    position: absolute;
+    width: auto;
+}
+
+@keyframes catcloud1{
+    0%{
+        left: -25%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+.cat-cloud-1{
+    animation-name: catcloud1;
+    animation-duration: 150s;
+    opacity: 60%;
+    height: 25%;
+    top: 0;
+}
+
+@keyframes catcloud2{
+    0%{
+        left: 125%;
+    }
+    100%{
+        left: -25%;
+    }
+}
+.cat-cloud-2{
+    animation-name: catcloud2;
+    animation-duration: 120s;
+    opacity: 50%;
+    height: 20%;
+    top: 5vh;
+}
+
+@keyframes catcloud3{
+    0%{
+        left: 100%;
+    }
+    100%{
+        left: -25%;
+    }
+}
+.cat-cloud-3{
+    animation-name: catcloud3;
+    animation-duration: 100s;
+    opacity: 75%;
+    height: 30%;
+    top: 15vh;
+}
+
+@keyframes gencloud1{
+    0% {
+        left: -25%;
+    }
+
+    100%{
+        left: 100;
+    }
+}
+
+.gen-cloud-1{
+    animation-name: gencloud1;
+    animation-duration: 200s;
+    opacity: 33%;
+    height: 25%;
+    top: 0;
+}
+
+@keyframes gencloud2{
+    0% {
+        left: 100%;
+    }
+
+    100%{
+        left: -33%;
+    }
+}
+
+.gen-cloud-2{
+    animation-name: gencloud2;
+    animation-duration: 200s;
+    opacity: 38%;
+    height: 30%;
+    top: 15vh;
 }
