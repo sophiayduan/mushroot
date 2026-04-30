@@ -73,3 +73,10 @@ body{
     max-height: 80vh;
     width: auto;
 }
+
+.cloud {
+    position: absolute;
+    top: 10%;
+    height: 10%;
+    width: auto;
+}
