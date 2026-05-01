@@ -1,6 +1,7 @@
 :root {
     --cream-light: #FAF4E9;
     --cream: #FFF6E4;
+    --cream-dark: #ffefcf;
     --pink: #FDABAB;
     --pink-light: #F3CBC5;
     --green-light: #BECCC0;
@@ -15,7 +16,7 @@
 }
 
 body{
-    background-color: var(--cream-light);
+    background-color: var(--cream-dark);
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -163,3 +164,86 @@ body{
     height: 30%;
     top: 15vh;
 }
+
+.mushroom{
+    position: relative;
+    height: 100%;
+}
+
+.c-1{
+    bottom: 10%;
+    height:10%;
+    left: 10%;
+    position: absolute;
+}
+.c-2{
+    bottom: 8%;
+    height:10%;
+    right: 10%;
+    position: absolute;
+}
+.c-3{
+    bottom: 15%;
+    height:10%;
+    right: 50%;
+    position: absolute;
+}
+.c-4{
+    bottom: 2%;
+    height:13%;
+    right: 30%;
+    position: absolute;
+}
+.c-5{
+    bottom: -2%;
+    height: 15%;
+    left: 30%;
+    position: absolute;
+}
+.c-6{
+    bottom: 2%;
+    height: 14%;
+    right: 0%;
+    position: absolute;
+}
+.c-7{
+    bottom: 0%;
+    height: 12%;
+    left: 0%;
+    position: absolute;
+}
+.c-8{
+    bottom: 30%;
+    height: 7%;
+    left: 20%;
+    position: absolute;
+}
+.c-9{
+    bottom: 30%;
+    height: 7%;
+    right: 20%;
+    position: absolute;
+}
+.c-10{
+    bottom: 32%;
+    height: 6%;
+    right: 10%;
+    position: absolute; 
+}
+.c-11{
+    bottom: 32%;
+    height: 6%;
+    left: 10%;
+    position: absolute; 
+}
+
+.mush-1{
+    top:10%;
+}
+.mush-2{
+    bottom:30%;
+}
+.mush-3{
+    top: 50%;
+}
+

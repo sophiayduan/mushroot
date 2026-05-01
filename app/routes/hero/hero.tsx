@@ -24,14 +24,65 @@ function Hero() {
                 <img className = "cloud cat-cloud-3" src={catCloud3} />
                 <img className = "cloud gen-cloud-1" src={genCloud1}/>
                 <img className = "cloud gen-cloud-2" src={genCloud2}/>
-
-
             </div>
 
             <div className = "hills">
                 <div className = "back-hill"></div>
                 <div className = "mid-hill"></div>
                 <div className = "front-hill"></div>
+            </div>
+
+            <div className = "mushrooms">
+                <div className = "c-1">
+                    <img className = "mushroom mush-1" src={m1} />
+                    <img className = "mushroom mush-2" src={m2} />
+                    <img className = "mushroom mush-3" src={m3} />
+                </div>
+                <div className = "c-2">
+                    <img className = "mushroom mush-1" src={m4} />
+                    <img className = "mushroom mush-2" src={m5} />
+                    <img className = "mushroom mush-3" src={m6} />
+                </div>
+                <div className = "c-3">
+                    <img className = "mushroom mush-1" src={m4} />
+                    <img className = "mushroom mush-2" src={m1} />
+                    <img className = "mushroom mush-3" src={m3} />
+                </div>
+                <div className = "c-4">
+                    <img className = "mushroom mush-1" src={m5} />
+                    <img className = "mushroom mush-2" src={m2} />
+                </div>
+                <div className = "c-5">
+                    <img className = "mushroom mush-2" src={m6} />
+                    <img className = "mushroom mush-3" src={m1} />
+                </div>
+                <div className = "c-6">
+                    <img className = "mushroom mush-1" src={m5} />
+                    <img className = "mushroom mush-3" src={m3} />
+                </div>
+                <div className = "c-7">
+                    <img className = "mushroom mush-2" src={m2} />
+                    <img className = "mushroom mush-3" src={m4} />
+                </div>
+                <div className = "c-8">
+                    <img className = "mushroom mush-1" src={m3} />
+                    <img className = "mushroom mush-2" src={m1} />
+                    <img className = "mushroom mush-3" src={m4} />
+                </div>
+                <div className = "c-9">
+                    <img className = "mushroom mush-1" src={m4} />
+                    <img className = "mushroom mush-2" src={m6} />
+                    <img className = "mushroom mush-3" src={m5} />
+                </div>
+                <div className = "c-10">
+                    <img className = "mushroom mush-1" src={m1} />
+                </div>
+                <div className = "c-11">
+                    <img className = "mushroom mush-1" src={m5} />
+                </div>
+            
+
+
             </div>
             <img className = "logo" src={titleLogo} alt="mush root text on top of a log" />
         </div>
