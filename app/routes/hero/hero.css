@@ -237,13 +237,44 @@ body{
     position: absolute; 
 }
 
+@keyframes mush-sway-1{
+    0%{
+
+    }
+    100%{
+
+    }
+}
+@keyframes mush-sway-2{
+    0%{
+
+    }
+    100%{
+        
+    }
+}
+@keyframes mush-sway-3{
+    0%{
+
+    }
+    100%{
+        
+    }
+}
+
 .mush-1{
     top:10%;
+    animation-name: mush-sway-1;
+    animation-duration: 20s;
 }
 .mush-2{
     bottom:30%;
+    animation-name: mush-sway-2;
+    animation-duration: 25s;
 }
 .mush-3{
     top: 50%;
+    animation-name: mush-sway-3;
+    animation-duration: 25s;
 }
 
