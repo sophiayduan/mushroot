@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState } from 'react';
 import "./hero.css";
 import m1 from "../../assets/mini-mush-1.png";
 import m2 from "../../assets/mini-mush-2.png";
