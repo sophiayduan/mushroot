@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Chango&family=Margarine&display=swap');
+
+:root {
+    --cream-light: #FAF4E9;
+    --cream: #FFF6E4;
+    --cream-dark: #ffefcf;
+    --pink: #FDABAB;
+    --pink-light: #F3CBC5;
+    --green-light: #BECCC0;
+    --green: #AABDA0;
+    --green-mid: #7E9278;
+    --green-mid-dark: #5B695D;
+    --green-dark: #435245;
+    --red-dark: #B30000;
+    --red: #E33B3B;
+    --brown: #AE986F;
+    --brown-dark: #96876C;
+}
+
+body{
+    background-color: var(--cream-dark);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    place-items: center;
+}
+
+.grid-box{
+    height: 75vh;
+    width: 50vw;
+    background-color: var(--green-dark);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: grid;
+    gap: 10px;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr 1fr 1fr;
+    border: 10px solid var(--green-dark);
+    box-shadow: 2px 4px 4px 2px var(--green-dark);
+    border-radius: 10px;
+    bottom: 10%;
+    background: linear-gradient(180deg, var(--green-mid-dark) 0%, var(--green-dark) 100%);
+}
+
+.grid{
+    border-color: var(--green-dark);
+    background-color: var(--green);
+    overflow-x: hidden;
+    overflow-y: hidden;
+    box-shadow: 1px 2px 2px 1px var(--green-dark);
+    background: linear-gradient(180deg, var(--green-light) 0%, var(--green) 100%);
+    border-radius: 5%;
+}
+
+.title-text{
+    place-items: center;
+}
+
+h1 {
+  font-family: "Chango", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p{
+  font-family: "Margarine", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
