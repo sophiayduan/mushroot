@@ -20,6 +20,8 @@ body{
     overflow-x: hidden;
     overflow-y: hidden;
 }
+
+/* Hills styling */
 .hills{
     width: 100vw;
     height: 80vh;
@@ -74,6 +76,8 @@ body{
     max-height: 80vh;
     width: auto;
 }
+
+/* Clouds styling */
 
 .cloud {
     position: absolute;
@@ -165,6 +169,8 @@ body{
     top: 15vh;
 }
 
+/* Stupid amount of mushrooms */
+
 .mushroom{
     position: relative;
     height: 100%;
@@ -237,44 +243,82 @@ body{
     position: absolute; 
 }
 
-@keyframes mush-sway-1{
-    0%{
-
+@media (orientation: portrait) {
+    .c-8{
+        left: -100%;
     }
-    100%{
+    .c-7{
+        left: -100%;
+    }
+    .c-6{
+        left: -100%;
+    }
+    .c-5{
+        left: -100%;
+    }
+    .c-10{
+        left: -100%;
+    }
+    .c-11{
+        left: -100%;
+    }
+    .c-1{
+        left: 0;
+    }
+    .c-2{
+        right:0;
+    }
+}
 
+@keyframes mush-sway-1{
+    0% {
+        transform: rotate(0deg) translateY(0);
+    }
+    25% {
+        transform: rotate(5deg) translateY(-1vmin);
+    }
+    50% {
+        transform: rotate(0deg) translateY(0vmin);
+    }
+    75% {
+        transform: rotate(-3deg) translateY(-1vmin);
+    }
+    100% {
+        transform: rotate(0deg) translateY(0);
     }
 }
 @keyframes mush-sway-2{
-    0%{
-
+   0% {
+        transform: rotate(0deg) translateY(0);
     }
-    100%{
-        
+    25% {
+        transform: rotate(5deg) translateY(-1vmin);
     }
-}
-@keyframes mush-sway-3{
-    0%{
-
+    50% {
+        transform: rotate(0deg) translateY(0vmin);
     }
-    100%{
-        
+    75% {
+        transform: rotate(-3deg) translateY(-1vmin);
+    }
+    100% {
+        transform: rotate(0deg) translateY(0);
     }
 }
 
 .mush-1{
     top:10%;
     animation-name: mush-sway-1;
-    animation-duration: 20s;
+    animation-duration: 15s;
+    animation-delay: 5s;
 }
 .mush-2{
     bottom:30%;
     animation-name: mush-sway-2;
     animation-duration: 25s;
+    animation-delay:2s;
 }
 .mush-3{
     top: 50%;
     animation-name: mush-sway-3;
     animation-duration: 25s;
 }
-
