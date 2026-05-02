@@ -243,6 +243,33 @@ body{
     position: absolute; 
 }
 
+@media (orientation: portrait) {
+    .c-8{
+        left: -100%;
+    }
+    .c-7{
+        left: -100%;
+    }
+    .c-6{
+        left: -100%;
+    }
+    .c-5{
+        left: -100%;
+    }
+    .c-10{
+        left: -100%;
+    }
+    .c-11{
+        left: -100%;
+    }
+    .c-1{
+        left: 0;
+    }
+    .c-2{
+        right:0;
+    }
+}
+
 @keyframes mush-sway-1{
     0% {
         transform: rotate(0deg) translateY(0);
