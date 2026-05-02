@@ -9,7 +9,6 @@ function Hero() {
                 <img className="cloud cat-cloud-3" src="/cat-cloud-3.png" />
                 <img className="cloud gen-cloud-2" src="/general-cloud-2.png" />
             </div>
-
             <div className="hills">
                 <div className="back-hill"></div>
                 <div className="mid-hill"></div>
@@ -75,10 +74,8 @@ function Hero() {
                     <img className="mushroom mush-1" src="/mini-mush-5.png" />
                 </div>
             </div>
-
             <img className="logo" src="/title-logo.png" alt="mush root text on top of a log" />
         </div>
     )
 }
-
 export default Hero;
