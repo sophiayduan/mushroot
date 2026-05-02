@@ -14,20 +14,28 @@ type Pages = {
   "/": {
     params: {};
   };
+  "/timer": {
+    params: {};
+  };
 };
 
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/";
+    page: "/" | "/timer";
   };
   "routes/hero/hero.tsx": {
     id: "routes/hero/hero";
     page: "/";
+  };
+  "routes/timer/timer.tsx": {
+    id: "routes/timer/timer";
+    page: "/timer";
   };
 };
 
 type RouteModules = {
   "root": typeof import("./app/root.tsx");
   "routes/hero/hero": typeof import("./app/routes/hero/hero.tsx");
+  "routes/timer/timer": typeof import("./app/routes/timer/timer.tsx");
 };
