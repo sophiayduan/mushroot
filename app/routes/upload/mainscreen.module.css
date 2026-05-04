@@ -1,0 +1,23 @@
+.mainScreen {
+  background-color: #faf4e9;
+  position: relative;
+  min-height: 100vh;
+}
+
+.greenBox {
+  position: absolute;
+  left: 386px;
+  top: 45px;
+  width: 689px;
+  height: 356px;
+  background-color: #aabda0;
+  border-radius: 25px;
+}
+
+.sidebarImage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: auto;
+}
