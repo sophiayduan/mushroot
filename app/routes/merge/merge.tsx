@@ -2,10 +2,33 @@ import "./merge.css";
 import { useState } from "react";
 
 function Hero() {
-    const [grid] = useState(Array(12).fill(null));
+
+    const [grid, setGrid] = useState(Array(12).fill(null));
+
+    const spawnMushroom = () => {
+        let firstEmptyIndex = -1;
+
+        for (let i = 0; i < grid.length; i++) {
+            if (grid[i] === null) {
+                firstEmptyIndex = i;
+                break;
+            }
+        }
+        if (firstEmptyIndex === -1) {
+            return;
+        }
+
+        const newGrid = [...grid];
+        newGrid[firstEmptyIndex] = "/merge-1.png";
+        setGrid(newGrid);
+    };
 
     return (
         <div className="merge">
+
+            <button className="spawn-btn" onClick={spawnMushroom}>
+                    Spawn Mushroom
+            </button>
 
             <main>
                 <div className="title-text">
@@ -16,7 +39,9 @@ function Hero() {
                 <div className="grid-box">
                     {grid.map((cell, i) => (
                         <div key={i} className="grid">
-                            {cell}
+                            {cell && (
+                                <img src={cell} alt="mushroom" className="mush-img"/>
+                            )}
                         </div>
                     ))}
                 </div>
@@ -28,10 +53,7 @@ function Hero() {
                     </div>
 
                     <div className="mush-count">
-                        <img
-                            className="mini-mushroom"
-                            src="/mini-mush-1.png"
-                            alt="tiny mushroom"
+                        <img className="mini-mushroom" src="/mini-mush-1.png" alt="tiny mushroom"
                         />
                         <div className="mush-count-output"></div>
                     </div>
