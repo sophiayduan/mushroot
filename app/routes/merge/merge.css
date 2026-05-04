@@ -17,125 +17,88 @@
     --brown-dark: #96876C;
 }
 
-body{
-    background-color: var(--cream-dark);
-    overflow-x: hidden;
-    overflow-y: hidden;
-    place-items: center;
-}
-
-.hills{
-    position: absolute;
-    width: 100vw;
-    height: 80vh;
-    top: 20vh;
-    overflow-x: hidden;
-    overflow-y: hidden;
-}
-
-.back-hill{
-    position: relative;
-    width: 200%;
-    height: 100%;
-    left: -100vw;
-    top: 30vh;
-    border-radius: 50%;
-    z-index: 1;
-    background: linear-gradient(180deg, var(--green) 0%, var(--green) 50%);
-    box-shadow: 3px 4px 10px 10px rgba(0, 0, 0, 0.25);
-}
-
-.mid-hill{
-    position: absolute;
-    width: 200%;
-    height: 100%;
-    right: -100vw;
-    top: 45vh;
-    border-radius: 50%;
-    z-index: 2;
-    background: linear-gradient(180deg, var(--green-mid) 0%, var(--green-mid-dark) 50%);
-    box-shadow: 3px 4px 10px 10px rgba(0, 0, 0, 0.25);
-}
-
-.front-hill{
-    position: absolute;
-    width: 200%;
-    height: 100%;
-    left: -50vw;
-    top: 60vh;
-    z-index: 3;
-    border-radius: 50%;
-    background: linear-gradient(180deg, var(--green-mid-dark) 0%, var(--green-dark) 50%);
-    box-shadow: 3px 4px 10px 10px rgba(0, 0, 0, 0.25);
-
-}
-
-main{
-    position: absolute;
-    place-items: center;
+body {
+    margin: 0;
     height: 100vh;
-    width: auto;
-    overflow-x: hidden;
-    overflow-y: hidden;
     display: grid;
-    grid-template-rows: 1fr 3fr 1fr;
-    z-index: 4;
-}
-
-
-.grid-box{
-    position: relative;
-    height: 60vh;
-    width: 50vw;
-    background-color: var(--green-dark);
-    overflow-x: hidden;
-    overflow-y: hidden;
-    display: grid;
-    gap: 10px;
-    grid-template-columns:1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    border: 10px solid var(--green-dark);
-    box-shadow: 2px 4px 4px 2px var(--green-dark);
-    border-radius: 10px;
-    bottom: 10%;
-    background: linear-gradient(180deg, var(--green-mid-dark) 0%, var(--green-dark) 100%);
-}
-
-.grid{
-    position: relative;
-    border-color: var(--green-dark);
-    background-color: var(--green);
-    overflow-x: hidden;
-    overflow-y: hidden;
-    box-shadow: 1px 2px 2px 1px var(--green-dark);
-    background: linear-gradient(180deg, var(--green-light) 0%, var(--green) 100%);
-    border-radius: 5%;
-}
-
-
-.title-text{
-    position: relative;
-    top: 0%;
-    width: 55%;
-    left: 25%;
     place-items: center;
+    background-color: var(--cream-dark);
+    font-family: "Margarine", sans-serif;
 }
 
-.stats-box{
-    position: absolute;
-    bottom: 0%;
+.merge {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-text {
+    text-align: center;
 }
 
 h1 {
-    position: relative;
     font-family: "Chango", sans-serif;
-    font-weight: 600;
-    font-style: normal;
 }
 
-p{
-    position: relative;
-    font-family: "Margarine", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+.grid-box {
+    width: min(90vw, 500px);
+    aspect-ratio: 4 / 4;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    padding: 10px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, var(--green-mid-dark) 0%, var(--green-dark) 100%);
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.grid {
+    background: linear-gradient(180deg, var(--green-light) 0%, var(--green) 100%);
+    border-radius: 8px;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stats-box {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.score {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mush-count {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mini-mushroom {
+    width: 30px;
+    height: 30px;
+}
+
+.mushrooms {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
 }
