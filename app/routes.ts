@@ -1,5 +1,5 @@
 import { type RouteConfig, route, index } from "@react-router/dev/routes";
 
 export default [
-    index("routes/hero/hero.tsx"),
+    index("routes/merge/merge.tsx"),
 ] satisfies RouteConfig;
