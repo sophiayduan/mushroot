@@ -24,8 +24,68 @@ body{
     place-items: center;
 }
 
+.hills{
+    position: absolute;
+    width: 100vw;
+    height: 80vh;
+    top: 20vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.back-hill{
+    position: relative;
+    width: 200%;
+    height: 100%;
+    left: -100vw;
+    top: 30vh;
+    border-radius: 50%;
+    z-index: 1;
+    background: linear-gradient(180deg, var(--green) 0%, var(--green) 50%);
+    box-shadow: 3px 4px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+.mid-hill{
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    right: -100vw;
+    top: 45vh;
+    border-radius: 50%;
+    z-index: 2;
+    background: linear-gradient(180deg, var(--green-mid) 0%, var(--green-mid-dark) 50%);
+    box-shadow: 3px 4px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+.front-hill{
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    left: -50vw;
+    top: 60vh;
+    z-index: 3;
+    border-radius: 50%;
+    background: linear-gradient(180deg, var(--green-mid-dark) 0%, var(--green-dark) 50%);
+    box-shadow: 3px 4px 10px 10px rgba(0, 0, 0, 0.25);
+
+}
+
+main{
+    position: absolute;
+    place-items: center;
+    height: 100vh;
+    width: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    z-index: 4;
+}
+
+
 .grid-box{
-    height: 75vh;
+    position: relative;
+    height: 60vh;
     width: 50vw;
     background-color: var(--green-dark);
     overflow-x: hidden;
@@ -33,7 +93,7 @@ body{
     display: grid;
     gap: 10px;
     grid-template-columns:1fr 1fr 1fr;
-    grid-template-rows:1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     border: 10px solid var(--green-dark);
     box-shadow: 2px 4px 4px 2px var(--green-dark);
     border-radius: 10px;
@@ -42,6 +102,7 @@ body{
 }
 
 .grid{
+    position: relative;
     border-color: var(--green-dark);
     background-color: var(--green);
     overflow-x: hidden;
@@ -51,18 +112,30 @@ body{
     border-radius: 5%;
 }
 
+
 .title-text{
+    position: relative;
+    top: 0%;
+    width: 55%;
+    left: 25%;
     place-items: center;
 }
 
+.stats-box{
+    position: absolute;
+    bottom: 0%;
+}
+
 h1 {
-  font-family: "Chango", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    position: relative;
+    font-family: "Chango", sans-serif;
+    font-weight: 600;
+    font-style: normal;
 }
 
 p{
-  font-family: "Margarine", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    position: relative;
+    font-family: "Margarine", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }

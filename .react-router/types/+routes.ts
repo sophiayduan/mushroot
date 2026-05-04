@@ -21,13 +21,13 @@ type RouteFiles = {
     id: "root";
     page: "/";
   };
-  "routes/hero/hero.tsx": {
-    id: "routes/hero/hero";
+  "routes/merge/merge.tsx": {
+    id: "routes/merge/merge";
     page: "/";
   };
 };
 
 type RouteModules = {
   "root": typeof import("./app/root.tsx");
-  "routes/hero/hero": typeof import("./app/routes/hero/hero.tsx");
+  "routes/merge/merge": typeof import("./app/routes/merge/merge.tsx");
 };
