@@ -14,13 +14,13 @@ public class Test {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)     // Can't be empty, must be unique
-    private Course_Code course_code;
+    private Course_Code courseCode;
 
     @Column(nullable = false)
     private int year;
 
     @Column(nullable = false)
-    private String teacher_name;
+    private String teacherName;
 
     //@Lab
     @Column(nullable = false, columnDefinition = "MEDIUMBLOB")
