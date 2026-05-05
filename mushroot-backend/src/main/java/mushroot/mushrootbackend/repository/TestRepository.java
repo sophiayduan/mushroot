@@ -1,7 +1,10 @@
-package com.yourapp.repository;
+package mushroot.mushrootbackend.repository;
 
-import com.yourapp.model.User;
+import mushroot.mushrootbackend.model.Course_Code;
+import mushroot.mushrootbackend.model.Test;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
 import java.util.Optional;
 
 // JpaRepository gives you free methods: save(), findById(), findAll(), delete()...
@@ -20,7 +23,7 @@ public interface TestRepository extends JpaRepository<Test, Long> {
 
     // 4. Find by Teacher Name
     List<Test> findByTeacherName(String teacherName);
-    
+
     // Bonus: Find by multiple criteria (e.g., Year and Teacher)
     List<Test> findByYearAndTeacherName(int year, String teacherName);
 
