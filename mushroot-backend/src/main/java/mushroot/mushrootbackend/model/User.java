@@ -22,7 +22,7 @@ public class User {
     @Column(nullable = false)
     private String teacher_name;
 
-    @Lab
+    //@Lab
     @Column(nullable = false, columnDefinition = "MEDIUMBLOB")
     private byte[] data;
 
