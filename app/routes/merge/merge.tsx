@@ -1,5 +1,8 @@
 import "./merge.css";
 import { useState } from "react";
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
+
 
 function Hero() {
 
@@ -40,7 +43,7 @@ function Hero() {
                     {grid.map((cell, i) => (
                         <div key={i} className="grid">
                             {cell && (
-                                <img src={cell} alt="mushroom" className="mush-img"/>
+                                <img src={cell} alt="mushroom" className="merge-item"/>
                             )}
                         </div>
                     ))}
