@@ -4,6 +4,7 @@ import mushroot.mushrootbackend.model.Course_Code;
 import mushroot.mushrootbackend.model.Test;
 import mushroot.mushrootbackend.repository.TestRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,7 +13,8 @@ import java.util.List;
 @RequiredArgsConstructor    // Lombok: auto-creates the constructor for us
 public class TestService {
 
-    private final TestRepository testRepository;
+    @Autowired
+    private TestRepository testRepository;
 
     // Get every test in the DB
     public List<Test> getAllTests() {
