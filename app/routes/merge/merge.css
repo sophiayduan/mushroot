@@ -103,7 +103,7 @@ h1 {
     pointer-events: none;
 }
 
-.mush-img {
+.merge-item {
     width: 80%;
     height: 80%;
     object-fit: contain;
