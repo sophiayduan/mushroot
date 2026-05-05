@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data               // Lombok magic: auto-generates getters, setters, toString
 @Entity             // Tells JPA: "this is a database table"
-@Table(name = "users")  // The table will be called "users" in MySQL
+@Table(name = "tests")  // The table will be called "tests" in MySQL
 public class User {
 
     @Id                                          // This is the primary key
@@ -26,8 +26,4 @@ public class User {
     @Column(nullable = false, columnDefinition = "MEDIUMBLOB")
     private byte[] data;
 
-}
-
-public enum Course_Code {
-    MDM4U, SCH4U, SPH4U, ICS4U
 }
