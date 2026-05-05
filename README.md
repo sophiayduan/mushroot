@@ -5,9 +5,14 @@ run ``npm install``
 run ``npm run dev``
 
 
-## To run
+## How to set up the database
 
-1. 
+### Pre-req
+- MySQL Driver
+    - Mysql command line
+
+### 1. Create database
+
 ```SQL
 CREATE DATABASE mushroot;
 ```
