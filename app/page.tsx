@@ -1,8 +1,5 @@
+import MainScreen from "./routes/upload/mainscreen";
+
 export default function Page() {
-  return (
-    <>
-      <h1>hi</h1>
-      <span>hihihihihi</span>
-    </>
-  );
+  return <MainScreen />;
 }
