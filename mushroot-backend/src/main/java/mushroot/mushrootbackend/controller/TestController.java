@@ -1,8 +1,10 @@
-package mushrootbackend.controller;
+package mushroot.mushrootbackend.controller;
 
-import mushrootbackend.model.User;
-import mushrootbackend.service.UserService;
+import mushroot.mushrootbackend.model.Course_Code;
+import mushroot.mushrootbackend.model.Test;
+import mushroot.mushrootbackend.service.TestService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,7 +15,8 @@ import java.util.List;
 @RequiredArgsConstructor
 public class TestController {
 
-    private final TestService testService;
+    @Autowired
+    private TestService testService;
 
     // GET /api/tests
     @GetMapping

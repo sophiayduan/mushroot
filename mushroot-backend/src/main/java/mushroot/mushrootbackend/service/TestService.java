@@ -1,7 +1,8 @@
-package mushrootbackend.service;
+package mushroot.mushrootbackend.service;
 
-import mushrootbackend.model.Test;
-import mushrootbackend.repository.TestRepository;
+import mushroot.mushrootbackend.model.Course_Code;
+import mushroot.mushrootbackend.model.Test;
+import mushroot.mushrootbackend.repository.TestRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor    // Lombok: auto-creates the constructor for us
 public class TestService {
 
-        private final TestRepository testRepository;
+    private final TestRepository testRepository;
 
     // Get every test in the DB
     public List<Test> getAllTests() {
@@ -26,12 +27,12 @@ public class TestService {
 
     // Get all tests for a course (e.g. ICS4U)
     public List<Test> getTestsByCourse(Course_Code course_code) {
-        return testRepository.findByCourse_code(course_code);
+        return testRepository.findByCourseCode(course_code);
     }
 
     // Get all tests by a teacher
     public List<Test> getTestsByTeacher(String teacher_name) {
-        return testRepository.findByTeacher_name(teacher_name);
+        return testRepository.findByTeacherName(teacher_name);
     }
 
     // Upload / save a new test
