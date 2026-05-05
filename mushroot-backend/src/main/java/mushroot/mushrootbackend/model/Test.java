@@ -6,7 +6,7 @@ import lombok.Data;
 @Data               // Lombok magic: auto-generates getters, setters, toString
 @Entity             // Tells JPA: "this is a database table"
 @Table(name = "tests")  // The table will be called "tests" in MySQL
-public class User {
+public class Test {
 
     @Id                                          // This is the primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)  // Auto-increment (1, 2, 3...)
