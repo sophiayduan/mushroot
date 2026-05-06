@@ -24,7 +24,7 @@
     "**/*.mts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "app/routes/merge/DragItem.tsx", "app/routes/merge/DropZone.tsx", "app/routes/merge/drag.tsx"  ],
   "exclude": [
     "node_modules"
   ]
