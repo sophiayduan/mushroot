@@ -1,0 +1,28 @@
+:root {
+    --cream-light: #FAF4E9;
+    --cream: #FFF6E4;
+    --cream-dark: #ffefcf;
+    --pink: #FDABAB;
+    --pink-light: #F3CBC5;
+    --green-light: #BECCC0;
+    --green: #AABDA0;
+    --green-mid: #7E9278;
+    --green-mid-dark: #5B695D;
+    --green-dark: #435245;
+    --red-dark: #B30000;
+    --red: #E33B3B;
+    --brown: #AE986F;
+    --brown-dark: #96876C;
+}
+
+.timer-display {
+    font-size: 5rem;
+    color: #1e40af;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+body{
+    background-color: var(--cream-dark);
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
