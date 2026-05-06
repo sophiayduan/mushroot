@@ -47,7 +47,7 @@ function Timer() {
         return () => clearInterval(interval);
     }, [isRunning, currentPhase, breakSeconds]);
 
-    const setTimes = () => {
+    const setTime = () => {
         const totalWork = workMinutes * 60;
         if (totalWork > 0) {
             setWorkSeconds(totalWork);
@@ -80,62 +80,65 @@ function Timer() {
 
     return (
         <div>
-            <h1>Work & Break Timer</h1>
+            <h1 className="Title">Pomodoro Timer</h1>
 
             {!isTimeSet ? (
-                <div>
-                    <h2>Set Your Times</h2>
+                <div className="setTimeContainer">
+                    <h2 className = "setTime">Set Time</h2>
                     
                     <div>
-                        <h3>Work Time</h3>
+                        <h3 className = "workTime">Work Time</h3>
                         <div>
                             <div>
-                                <label>Minutes</label>
+                                <label className = "minutes1">Minutes</label>
                                 <input
                                     type="number"
                                     min="0"
                                     value={workMinutes}
                                     onChange={(e) => setWorkMinutes(Math.max(0, parseInt(e.target.value) || 0))}
+                                    className = "inputWork1"
                                 />
                             </div>
                         </div>
                     </div>
 
                     <div>
-                        <h3>Break Time</h3>
+                        <h3 className = "breakTime">Break Time</h3>
                         <div>
                             <div>
-                                <label>Minutes</label>
+                                <label className = "minutes2">Minutes</label>
                                 <input
                                     type="number"
                                     min="0"
                                     value={breakMinutes}
                                     onChange={(e) => setBreakMinutes(Math.max(0, parseInt(e.target.value) || 0))}
+                                    className = "inputBreak1"
                                 />
                             </div>
                         </div>
                     </div>
 
                     <button
-                        onClick={setTimes}
+                        onClick={setTime}
+                        className = "setTimeButton"
                     >
                         Start Timer
                     </button>
                 </div>
             ) : (
-                <div>
+                <div className="timerContainer">
                     {/* Work Timer */}
                     <div>
-                        <h2>Work</h2>
-                        <div>
+                        <h2 className="work">Work</h2>
+                        <div className="timerDisplay">
                             {formatTime(workSeconds)}
                         </div>
                     </div>
 
                     {/* Break Timer */}
                     <div>
-                        <h2>Break</h2>
-                        <div>
+                        <h2 className="break">Break</h2>
+                        <div className="timerDisplay">
                             {formatTime(breakSeconds)}
                         </div>
                     </div>
@@ -144,11 +147,13 @@ function Timer() {
                     <div>
                         <button
                             onClick={toggleTimer}
+                            className="startButton"
                         >
                             {isRunning ? "Pause" : "Start"}
                         </button>
                         <button
                             onClick={resetTimer}
+                            className="resetButton"
                         >
                             Reset
                         </button>
