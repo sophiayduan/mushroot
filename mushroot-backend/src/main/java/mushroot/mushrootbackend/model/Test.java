@@ -12,6 +12,9 @@ public class Test {
     @GeneratedValue(strategy = GenerationType.IDENTITY)  // Auto-increment (1, 2, 3...)
     private Long id;
 
+    @Column(nullable = false)
+    private String title;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)     // Can't be empty, must be unique
     private Course_Code courseCode;
@@ -21,6 +24,10 @@ public class Test {
 
     @Column(nullable = false)
     private String teacherName;
+
+    // @Lab
+    @Column(nullable = false, columnDefinition = "BLOB")
+    private byte[] thumbnail;
 
     //@Lab
     @Column(nullable = false, columnDefinition = "MEDIUMBLOB")
