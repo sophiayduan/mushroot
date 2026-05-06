@@ -7,7 +7,7 @@ function accesibility() {
             </div>
 
             <div className = "grid grid-cols-2 gap-5 mt-10 font-margarine text-[#FAF4E9] text-2xl ">
-                <div className = "bg-[#AABDA0] w-150 h-40 mb-10 rounded-xl flex items-center justify-center duration-300" onClick = {}> Dark Mode</div>
+                <div className = "bg-[#AABDA0] w-150 h-40 mb-10 rounded-xl flex items-center justify-center duration-300"> Dark Mode</div>
                 <div className = "bg-[#AABDA0] mb-10 rounded-xl flex items-center justify-center"> Subway surfers</div>
                 <div className = "bg-[#AABDA0] h-40 mb-10 rounded-xl flex items-center justify-center"> Line Following</div>
                 <div className = "bg-[#AABDA0] mb-10 rounded-xl flex items-center justify-center"> Animations on/off</div>
