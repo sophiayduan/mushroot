@@ -2,6 +2,7 @@ package mushroot.mushrootbackend.repository;
 
 import mushroot.mushrootbackend.model.Course_Code;
 import mushroot.mushrootbackend.model.Test;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
