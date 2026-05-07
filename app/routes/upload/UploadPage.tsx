@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import "./UploadPage.css";
+import "./uploadpage.css";
  
 // 🍄 REPLACE these imports with your actual asset paths
 // import logBg from "./assets/log-bg.png";
