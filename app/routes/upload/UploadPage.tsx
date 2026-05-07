@@ -1,20 +1,13 @@
-import React, { useState, useRef } from "react";
-import "./UploadPage.css";
- 
-// 🍄 REPLACE these imports with your actual asset paths
-// import logBg from "./assets/log-bg.png";
-// import mushroomIcon from "./assets/mushroom.png";
- 
+import React, {useState, useRef } from "react";
+import "./uploadpage.css";
+
 interface UploadPageProps {
-  // Pass your image paths as props or swap in imports above
-  logBgSrc?: string;
+  sidebarSrc?: string;
   mushroomIconSrc?: string;
 }
- 
-const NAV_ITEMS = ["Home", "Archives", "Upload", "Lock In", "Profile"];
- 
+
 const UploadPage: React.FC<UploadPageProps> = ({
-  logBgSrc = "/public/hero-sidebar.png",
+  sidebarSrc = "/public/hero-sidebar.png",
   mushroomIconSrc = "/public/mini-mush-3.png",
 }) => {
   const [thumbnail, setThumbnail] = useState<string | null>(null);
@@ -43,39 +36,15 @@ const UploadPage: React.FC<UploadPageProps> = ({
     const file = e.dataTransfer.files?.[0];
     if (file && file.type === "application/pdf") {
       console.log("PDF dropped:", file.name);
-      // handle PDF upload logic here
     }
   };
  
   return (
-    <div
-      className="upload-page"
-      style={{ backgroundImage: `url(${logBgSrc})` }}
-    >
-      {/* ── LEFT NAV ── */}
-      <nav className="sidebar">
-        {NAV_ITEMS.map((item) => (
-          <button key={item} className="nav-btn">
-            {item}
-          </button>
-        ))}
+    <div className="upload-page">
+      <img src={sidebarSrc} alt="Sidebar" className="sidebar-image" />
  
-        {/* Mushroom counter */}
-        <button className="nav-btn nav-btn--mushroom">
-          <img
-            src={mushroomIconSrc}
-            alt="mushroom"
-            className="mushroom-icon"
-          />
-          <span>00</span>
-        </button>
-      </nav>
- 
-      {/* ── MAIN CONTENT ── */}
       <main className="main-content">
-        {/* ── MIDDLE COLUMN ── */}
         <section className="middle-col">
-          {/* Thumbnail box */}
           <div className="green-box thumbnail-box">
             <p className="box-label">Thumbnail</p>
  
@@ -100,7 +69,6 @@ const UploadPage: React.FC<UploadPageProps> = ({
             </button>
           </div>
  
-          {/* File drop box */}
           <div
             className={`green-box drop-box ${dragOver ? "drop-box--active" : ""}`}
             onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
@@ -114,7 +82,6 @@ const UploadPage: React.FC<UploadPageProps> = ({
           </div>
         </section>
  
-        {/* ── RIGHT COLUMN ── */}
         <section className="right-col">
           <input
             className="green-input title-input"
@@ -176,5 +143,5 @@ const UploadPage: React.FC<UploadPageProps> = ({
     </div>
   );
 };
- 
+
 export default UploadPage;
