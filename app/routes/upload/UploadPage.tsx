@@ -1,14 +1,13 @@
 import React, {useState, useRef } from "react";
-import Navbar from "./navbar";
 import "./uploadpage.css";
 
 interface UploadPageProps {
-  logBgSrc?: string;
+  sidebarSrc?: string;
   mushroomIconSrc?: string;
 }
- 
+
 const UploadPage: React.FC<UploadPageProps> = ({
-  logBgSrc = "/public/hero-sidebar.png",
+  sidebarSrc = "/public/hero-sidebar.png",
   mushroomIconSrc = "/public/mini-mush-3.png",
 }) => {
   const [thumbnail, setThumbnail] = useState<string | null>(null);
@@ -41,11 +40,8 @@ const UploadPage: React.FC<UploadPageProps> = ({
   };
  
   return (
-    <div
-      className="upload-page"
-      style={{ backgroundImage: `url(${logBgSrc})` }}
-    >
-      <Navbar mushroomIconSrc={mushroomIconSrc} mushroomCount={0} />
+    <div className="upload-page">
+      <img src={sidebarSrc} alt="Sidebar" className="sidebar-image" />
  
       <main className="main-content">
         <section className="middle-col">
@@ -147,5 +143,5 @@ const UploadPage: React.FC<UploadPageProps> = ({
     </div>
   );
 };
- 
+
 export default UploadPage;
