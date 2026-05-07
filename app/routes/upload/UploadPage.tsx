@@ -1,4 +1,5 @@
 import React, {useState, useRef } from "react";
+import Navbar from "./navbar";
 import "./uploadpage.css";
 
 interface UploadPageProps {
@@ -41,8 +42,11 @@ const UploadPage: React.FC<UploadPageProps> = ({
  
   return (
     <div className="upload-page">
-      <img src={sidebarSrc} alt="Sidebar" className="sidebar-image" />
- 
+      <div className="sidebar-panel">
+        <img src={sidebarSrc} alt="Sidebar" className="sidebar-image" />
+        <Navbar mushroomIconSrc={mushroomIconSrc} mushroomCount={0} />
+      </div>
+
       <main className="main-content">
         <section className="middle-col">
           <div className="green-box thumbnail-box">
