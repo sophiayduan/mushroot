@@ -1,4 +1,4 @@
-// UploadPage.tsx
+// uploadpage.tsx
 
 import React, { useRef, useState } from "react";
 import Navbar from "./navbar";
@@ -40,10 +40,10 @@ export default function UploadPage({
           aria-hidden="true"
         />
         <img
-        src="/mushroot-logo.png"
-        alt="Mush Root"
-        className="mushroot-logo"
-/>
+          src="/title-logo.png"
+          alt="Mush Root"
+          className="mushroot-logo"
+        />
         <Navbar mushroomIconSrc={mushroomIconSrc} mushroomCount={0} />
 
       </aside>
@@ -129,7 +129,7 @@ export default function UploadPage({
 
           <textarea
             className="field description-field"
-            placeholder="yapyapyapyapyapyapyap"
+            placeholder="text here"
           />
 
           {/* SUBJECT + YEAR */}

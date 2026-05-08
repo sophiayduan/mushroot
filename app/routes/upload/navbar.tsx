@@ -20,6 +20,7 @@ export default function Navbar({
   mushroomIconSrc = "/mini-mush-3.png",
   mushroomCount = 0,
 }: NavbarProps) {
+
   return (
 
     <nav className="mushroom-nav">
