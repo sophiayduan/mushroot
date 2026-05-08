@@ -1,334 +1,390 @@
+/* uploadpage.css */
 
-@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Patrick+Hand&display=swap');
 
 :root {
-  --sage:        #8aaa8a;
-  --sage-dark:   #6e8f6e;
-  --sage-input:  #7d9e7d;
-  --cream:       #f2ece0;
-  --blush:       #e8b8b8;
-  --blush-hover: #d9a5a5;
-  --text-dark:   #3b3b2f;
-  --text-light:  #f5f0e8;
-  --nav-bg:      #f7f1e5;
-  --nav-border:  #d4c9b0;
-  --radius:      14px;
-  --radius-sm:   8px;
-  --font-head:   "Baloo 2", cursive;
-  --font-body:   "Nunito", sans-serif;
+
+  --bg: #F3EEE6;
+
+  --sage: #B7C6AA;
+  --sage-dark: #A8B89A;
+
+  --cream: #F7F4ED;
+
+  --green-text: #465447;
+
+  --white-text: #F6F2EA;
+
+  --pink: #E8C7C3;
+  --pink-hover: #ddb6b2;
+
 }
 
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-
-.upload-page {
-  display: flex;
-  min-height: 100vh;
-  background-color: var(--cream);
-  font-family: var(--font-body);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.sidebar-panel {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  width: min(280px, 24vw);
-  min-width: 150px;
-  max-width: 280px;
-  height: 100vh;
-  flex-shrink: 0;
+body {
   overflow: hidden;
 }
 
-.sidebar-image {
-  position: absolute;
-  inset: 0;
+/* PAGE */
+
+.upload-page {
+
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
+  height: 100vh;
+
+  display: grid;
+  grid-template-columns: 300px 1fr;
+
+  background: var(--bg);
+
+  overflow: hidden;
 }
 
-.sidebar-panel .mushroom-nav {
+/* SIDEBAR */
+
+.sidebar {
+
   position: relative;
-  z-index: 1;
-  width: 100%;
-  background: transparent;
-  padding: 20px 16px 16px;
+
+  width: 340px;
+  height: 100vh;
+
+  overflow: hidden;
 }
 
-.sidebar-panel .mushroom-nav::before {
-  content: "";
+.sidebar-bg {
+
   position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(6px);
-  border-radius: 28px;
-  z-index: -1;
+
+  left: 0;
+  top: 0;
+
+  height: 100vh;
+  width: auto;
+
+  max-width: none;
 }
+
+/* MAIN */
 
 .main-content {
-  display: flex;
-  flex: 1;
-  gap: 20px;
-  padding: 24px 28px 24px 16px;
-  align-items: flex-start;
+
+  display: grid;
+
+  grid-template-columns: 620px 700px;
+  gap: 28px;
+
+  padding: 42px 34px 32px 18px;
+
+  justify-content: start;
+
+  align-items: start;
 }
 
+/* LEFT */
 
-.middle-col {
+.left-column {
+
   display: flex;
   flex-direction: column;
+
+  gap: 30px;
+}
+
+/* RIGHT */
+
+.right-column {
+
+  display: flex;
+  flex-direction: column;
+
   gap: 16px;
-  flex: 1.1;
-  max-width: 480px;
+  width: 680px;
+
 }
 
+/* CARDS */
 
-.right-col {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  flex: 1.2;
-}
+.card {
 
-
-.green-box {
   background: var(--sage);
-  border-radius: var(--radius);
-  padding: 18px 20px;
+
+  border-radius: 30px;
+
+  position: relative;
+}
+
+/* THUMBNAIL */
+
+.thumbnail-card {
+
+  height: 335px;
+
+  padding: 28px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
 }
 
+.hand-title {
 
-.thumbnail-box {
-  min-height: 200px;
+  width: 100%;
+
+  font-family: "Schoolbell", cursive;
+
+  font-size: 64px;
+  font-weight: 400;
+
+  color: var(--white-text);
+
+  text-transform: lowercase;
+
+  margin-bottom: 10px;
 }
 
-.box-label {
-  font-family: var(--font-head);
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--text-light);
-  align-self: flex-start;
-}
+/* PLACEHOLDER */
 
 .thumbnail-placeholder {
+
   width: 100%;
-  height: 90px;
-  background: rgba(255,255,255,0.12);
-  border-radius: var(--radius-sm);
+  height: 120px;
+
+  border-radius: 18px;
 }
 
 .thumbnail-preview {
+
   width: 100%;
-  max-height: 160px;
+  height: 140px;
+
   object-fit: cover;
-  border-radius: var(--radius-sm);
+
+  border-radius: 18px;
 }
 
+/* BUTTON */
 
 .upload-btn {
-  background: var(--blush);
+
+  margin-top: auto;
+
+  width: 310px;
+  height: 78px;
+
   border: none;
-  border-radius: var(--radius-sm);
-  padding: 10px 40px;
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-dark);
+
+  border-radius: 18px;
+
+  background: var(--pink);
+
+  font-family: "Patrick Hand", cursive;
+
+  font-size: 52px;
+
+  color: var(--white-text);
+
   cursor: pointer;
-  transition: background 0.15s, transform 0.1s;
+
+  transition: 0.15s;
 }
 
 .upload-btn:hover {
-  background: var(--blush-hover);
-  transform: translateY(-1px);
+
+  background: var(--pink-hover);
+
+  transform: translateY(-2px);
 }
 
-/* Drop zone */
-.drop-box {
-  min-height: 200px;
+/* PDF CARD */
+
+.pdf-card {
+
+  height: 370px;
+
+  display: flex;
+  flex-direction: column;
+
   justify-content: center;
+  align-items: center;
+
   cursor: pointer;
-  transition: background 0.15s, outline 0.15s;
-  outline: 3px dashed transparent;
 }
 
-.drop-box:hover {
-  background: var(--sage-dark);
+.pdf-title {
+
+  font-family: "Patrick Hand", cursive;
+
+  font-size: 76px;
+  font-weight: 400;
+
+  color: var(--white-text);
+
+  margin-bottom: 12px;
 }
 
-.drop-box--active {
-  outline-color: var(--text-light);
-  background: var(--sage-dark);
-}
+.pdf-subtitle {
 
-.drop-title {
-  font-family: var(--font-head);
-  font-size: 1.7rem;
-  font-weight: 700;
-  color: var(--text-light);
+  font-family: "Patrick Hand", cursive;
+
+  font-size: 34px;
+  line-height: 1.45;
+
   text-align: center;
+
+  color: var(--white-text);
 }
 
-.drop-sub {
-  font-size: 1rem;
-  color: var(--text-light);
-  text-align: center;
-  max-width: 280px;
-  line-height: 1.5;
-}
-
+/* LABELS */
 
 .field-label {
-  font-family: var(--font-head);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text-dark);
+
+  font-family: "Patrick Hand", cursive;
+
+  font-size: 44px;
+  line-height: 1;
+
+  color: #A9B998;
+
   margin-bottom: -6px;
 }
 
+/* FIELDS */
 
-.green-input {
+.field {
+
   width: 100%;
-  background: var(--sage);
+
   border: none;
-  border-radius: var(--radius-sm);
-  padding: 12px 14px;
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  color: var(--text-light);
   outline: none;
-  transition: background 0.15s, box-shadow 0.15s;
+
+  background: var(--sage);
+
+  border-radius: 18px;
+
+  padding: 16px 20px;
+
+  font-family: "Patrick Hand", cursive;
+
+  font-size: 28px;
+
+  color: var(--white-text);
+
   resize: none;
 }
 
-.green-input::placeholder {
-  color: rgba(245,240,232,0.70);
+.field::placeholder {
+
+  color: rgba(246, 242, 234, 0.82);
 }
 
-.green-input:focus {
-  background: var(--sage-dark);
-  box-shadow: 0 0 0 3px rgba(110,143,110,0.40);
+/* TITLE */
+
+.title-field {
+
+  height: 88px;
+
+  font-size: 56px;
+
+  width: 640px;
+
+  flex: none;
 }
 
-/* Title — bigger text */
-.title-input {
-  font-family: var(--font-head);
-  font-size: 1.3rem;
-  font-weight: 700;
-  padding: 14px 16px;
+/* DESCRIPTION */
+
+.description-field {
+
+  height: 290px;
+
+  padding-top: 18px;
 }
 
-/* Description */
-.description-input {
-  min-height: 160px;
-}
+/* ROW */
 
-/* Subject + Year row */
-.row-fields {
+.row {
+
   display: flex;
-  gap: 14px;
-  align-items: flex-end;
+
+  gap: 20px;
 }
+
+/* GROUP */
 
 .field-group {
+
+  flex: 1;
+
   display: flex;
   flex-direction: column;
+
   gap: 6px;
-  flex: 1;
 }
 
-/* Custom select wrapper */
+.year-group {
+
+  max-width: 290px;
+}
+
+/* SELECT */
+
 .select-wrapper {
+
   position: relative;
-  padding: 0;
-  display: flex;
-  align-items: center;
 }
 
-.select-wrapper select {
-  width: 100%;
-  background: transparent;
-  border: none;
-  color: var(--text-light);
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  padding: 12px 36px 12px 14px;
+.select-field {
+
   appearance: none;
+
   cursor: pointer;
-  outline: none;
 }
 
-.select-wrapper select option {
-  background: var(--sage-dark);
-  color: var(--text-light);
-}
+.arrow {
 
-.select-arrow {
   position: absolute;
-  right: 12px;
-  font-size: 1.2rem;
-  color: var(--blush);
+
+  right: 20px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  font-size: 44px;
+
+  color: var(--pink);
+
   pointer-events: none;
-  transform: rotate(90deg);
 }
 
-/* Tags */
-.tags-input {
-  min-height: 80px;
+/* TEACHER */
+
+input.field {
+
+  height: 70px;
 }
 
-/* ─────────────── RESPONSIVE ─────────────── */
+/* TAGS */
 
-.main-content {
-  flex-wrap: wrap;
+.tags-field {
+
+  height: 170px;
 }
 
-.middle-col,
-.right-col {
-  flex: 1 1 100%;
-  min-width: 0;
-}
+.mushroot-logo {
 
-.green-box {
-  width: 100%;
-}
+  position: absolute;
 
-@media (max-width: 920px) {
-  .upload-page {
-    flex-direction: column;
-  }
+  bottom: 18px;
+  left: 12px;
 
-  .sidebar-panel {
-    width: 100%;
-    height: auto;
-    min-width: auto;
-  }
+  width: 220px;
 
-  .sidebar-image {
-    height: 220px;
-  }
+  z-index: 2;
 
-  .main-content {
-    padding: 16px;
-  }
-}
-
-@media (max-width: 900px) {
-  .main-content {
-    flex-direction: column;
-  }
-  .middle-col,
-  .right-col {
-    max-width: 100%;
-    width: 100%;
-  }
+  pointer-events: none;
 }
