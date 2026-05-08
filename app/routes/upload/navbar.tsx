@@ -1,7 +1,7 @@
+// Navbar.tsx
+
 import { NavLink } from "react-router";
 import "./navbar.css";
-
-
 
 interface NavbarProps {
   mushroomIconSrc?: string;
@@ -9,41 +9,47 @@ interface NavbarProps {
 }
 
 const NAV_ITEMS = [
-  { label: "Home",     to: "/" },
+  { label: "Home", to: "/" },
   { label: "Archives", to: "/archives" },
-  { label: "Upload",   to: "/upload" },
-  { label: "Lock In",  to: "/lockin" },
-  { label: "Profile",  to: "/profile" },
+  { label: "Upload", to: "/upload" },
+  { label: "Lock In", to: "/lockin" },
+  { label: "Profile", to: "/profile" },
 ];
 
 export default function Navbar({
-  mushroomIconSrc = "/public/mini-mush-3.png",
+  mushroomIconSrc = "/mini-mush-3.png",
   mushroomCount = 0,
 }: NavbarProps) {
   return (
+
     <nav className="mushroom-nav">
-      {NAV_ITEMS.map(({ label, to }) => (
+
+      {NAV_ITEMS.map((item) => (
+
         <NavLink
-          key={label}
-          to={to}
-          end={to === "/"}
-          className={({ isActive }) =>
-            `nav-pill ${isActive ? "nav-pill--active" : ""}`
-          }
+          key={item.label}
+          to={item.to}
+          className="nav-pill"
         >
-          {label}
+          {item.label}
         </NavLink>
+
       ))}
 
-      {/* Mushroom counter — not a route, just a display button */}
-      <div className="nav-pill nav-pill--mushroom">
+      <div className="nav-pill mushroom-pill">
+
         <img
           src={mushroomIconSrc}
           alt="mushroom"
-          className="mushroom-icon"
+          className="mush-icon"
         />
-        <span>{String(mushroomCount).padStart(2, "0")}</span>
+
+        <span>
+          {String(mushroomCount).padStart(2, "0")}
+        </span>
+
       </div>
+
     </nav>
   );
 }

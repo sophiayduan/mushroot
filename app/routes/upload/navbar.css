@@ -1,93 +1,78 @@
+/* navbar.css */
 
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&display=swap');
 
-@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&display=swap");
-
-:root {
-  --nav-bg:        #f7f1e5;
-  --nav-border:    #d4c9b0;
-  --nav-hover:     #ede4cc;
-  --nav-active-bg: #c9d8c9;
-  --nav-active-border: #7d9e7d;
-  --text-dark:     #3b3b2f;
-  --text-active:   #2e4a2e;
-  --font-head:     "Baloo 2", cursive;
-}
-
-/* ── Sidebar wrapper ── */
 .mushroom-nav {
+
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 24px 16px;
-  width: 190px;
-  flex-shrink: 0;
-  z-index: 10;
-  /* sits on top of the log background image */
-  position: relative;
+
+  align-items: center;
+
+  gap: 34px;
+
+  padding-top: 44px;
 }
 
-/* ── Pill base ── */
+/* PILLS */
+
 .nav-pill {
+
+  width: 240px;
+  height: 74px;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
 
-  background: var(--nav-bg);
-  border: 2.5px solid var(--nav-border);
-  border-radius: 999px;
-  padding: 10px 18px;
+  border-radius: 28px;
 
-  font-family: var(--font-head);
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--text-dark);
+  background: #F7F4ED;
+
+  box-shadow:
+    0 8px 18px rgba(0,0,0,0.18);
+
   text-decoration: none;
-  white-space: nowrap;
 
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.10);
-  transition: background 0.15s, transform 0.12s, box-shadow 0.15s, border-color 0.15s;
+  font-family: "Baloo 2", cursive;
+
+  font-size: 34px;
+  font-weight: 700;
+
+  color: #465447;
+
+  transition: 0.15s;
 }
 
-/* ── Hover ── */
 .nav-pill:hover {
-  background: var(--nav-hover);
+
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* ── Pressed ── */
-.nav-pill:active {
-  transform: translateY(0);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.10);
+/* MUSHROOM */
+
+.mushroom-pill {
+
+  position: absolute;
+
+  bottom: 160px;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 240px;
 }
 
-/* ── Active route ── */
-.nav-pill--active {
-  background: var(--nav-active-bg);
-  border-color: var(--nav-active-border);
-  color: var(--text-active);
-  box-shadow: 0 2px 8px rgba(110, 143, 110, 0.30);
-}
+.mush-icon {
 
-.nav-pill--active:hover {
-  background: #b8ccb8;
-}
+  width: 36px;
+  height: 36px;
 
-/* ── Mushroom counter pill ── */
-.nav-pill--mushroom {
-  gap: 8px;
-  cursor: default;   /* not a link, so no pointer */
-}
-
-.nav-pill--mushroom:hover {
-  transform: none;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.10);
-}
-
-.mushroom-icon {
-  width: 26px;
-  height: 26px;
   object-fit: contain;
 }
