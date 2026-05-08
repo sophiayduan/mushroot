@@ -1,390 +1,274 @@
 /* uploadpage.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Patrick+Hand&display=swap');
-
-:root {
-
-  --bg: #F3EEE6;
-
-  --sage: #B7C6AA;
-  --sage-dark: #A8B89A;
-
-  --cream: #F7F4ED;
-
-  --green-text: #465447;
-
-  --white-text: #F6F2EA;
-
-  --pink: #E8C7C3;
-  --pink-hover: #ddb6b2;
-
-}
-
-* {
-  margin: 0;
-  padding: 0;
+.upload-page, .upload-page * {
+  all: revert;
   box-sizing: border-box;
 }
 
-body {
-  overflow: hidden;
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Patrick+Hand&display=swap');
+
+:root {
+    --cream-light:    #e9faf5;
+    --pink:           #FDABAB;
+    --pink-light:     #F3CBC5;
+    --green:          #AABDA0;
+    --green-mid:      #7E9278;
+    --green-dark:     #435245;
 }
 
-/* PAGE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--cream-light);
+    overflow: hidden;
+    font-family: "Patrick Hand", cursive;
+}
+
+/* ── PAGE ── */
 
 .upload-page {
-
-  width: 100%;
-  height: 100vh;
-
-  display: grid;
-  grid-template-columns: 300px 1fr;
-
-  background: var(--bg);
-
-  overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 255px 1fr;
+    background: var(--cream-light);
+    overflow: hidden;
 }
 
-/* SIDEBAR */
+/* ── SIDEBAR ── */
 
 .sidebar {
-
-  position: relative;
-
-  width: 340px;
-  height: 100vh;
-
-  overflow: hidden;
+    position: relative;
+    width: 255px;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .sidebar-bg {
-
-  position: absolute;
-
-  left: 0;
-  top: 0;
-
-  height: 100vh;
-  width: auto;
-
-  max-width: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: auto;
+    object-fit: contain;
 }
 
-/* MAIN */
+.mushroot-logo {
+    position: absolute;
+    bottom: 10px;
+    left: 14px;
+    z-index: 3;
+}
+
+/* ── MAIN ── */
 
 .main-content {
-
-  display: grid;
-
-  grid-template-columns: 620px 700px;
-  gap: 28px;
-
-  padding: 42px 34px 32px 18px;
-
-  justify-content: start;
-
-  align-items: start;
+    display: grid;
+    grid-template-columns: 480px 1fr;
+    gap: 20px;
+    padding: 28px 20px 28px 10px;
+    align-items: start;
+    overflow: hidden;
 }
 
-/* LEFT */
+/* ── LEFT COLUMN ── */
 
 .left-column {
-
-  display: flex;
-  flex-direction: column;
-
-  gap: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
-/* RIGHT */
+/* ── RIGHT COLUMN ── */
 
 .right-column {
-
-  display: flex;
-  flex-direction: column;
-
-  gap: 16px;
-  width: 680px;
-
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-/* CARDS */
+/* ── CARDS ── */
 
 .card {
-
-  background: var(--sage);
-
-  border-radius: 30px;
-
-  position: relative;
+    background: var(--green);
+    border-radius: 22px;
 }
 
 /* THUMBNAIL */
 
 .thumbnail-card {
-
-  height: 335px;
-
-  padding: 28px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    height: 220px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .hand-title {
-
-  width: 100%;
-
-  font-family: "Schoolbell", cursive;
-
-  font-size: 64px;
-  font-weight: 400;
-
-  color: var(--white-text);
-
-  text-transform: lowercase;
-
-  margin-bottom: 10px;
+    font-size: 26px;
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 10px;
+    font-weight: 400;
 }
 
-/* PLACEHOLDER */
-
 .thumbnail-placeholder {
-
-  width: 100%;
-  height: 120px;
-
-  border-radius: 18px;
+    width: 100%;
+    flex: 1;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .thumbnail-preview {
-
-  width: 100%;
-  height: 140px;
-
-  object-fit: cover;
-
-  border-radius: 18px;
+    width: 100%;
+    flex: 1;
+    object-fit: cover;
+    border-radius: 14px;
 }
 
-/* BUTTON */
+/* UPLOAD BUTTON */
 
 .upload-btn {
-
-  margin-top: auto;
-
-  width: 310px;
-  height: 78px;
-
-  border: none;
-
-  border-radius: 18px;
-
-  background: var(--pink);
-
-  font-family: "Patrick Hand", cursive;
-
-  font-size: 52px;
-
-  color: var(--white-text);
-
-  cursor: pointer;
-
-  transition: 0.15s;
+    margin: 12px auto 0 auto;
+    width: 190px;
+    height: 52px;
+    border: none;
+    border-radius: 14px;
+    background: var(--pink-light);
+    font-family: "Patrick Hand", cursive;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.92);
+    cursor: pointer;
+    transition: 0.15s;
+    flex-shrink: 0;
 }
 
 .upload-btn:hover {
-
-  background: var(--pink-hover);
-
-  transform: translateY(-2px);
+    transform: translateY(-2px);
+    background: var(--pink);
 }
 
-/* PDF CARD */
+/* PDF */
 
 .pdf-card {
+    height: 248px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.15s;
+}
 
-  height: 370px;
-
-  display: flex;
-  flex-direction: column;
-
-  justify-content: center;
-  align-items: center;
-
-  cursor: pointer;
+.pdf-card:hover {
+    background: var(--green-mid);
 }
 
 .pdf-title {
-
-  font-family: "Patrick Hand", cursive;
-
-  font-size: 76px;
-  font-weight: 400;
-
-  color: var(--white-text);
-
-  margin-bottom: 12px;
+    font-size: 36px;
+    color: rgba(255, 255, 255, 0.92);
+    font-weight: 400;
+    margin-bottom: 10px;
 }
 
 .pdf-subtitle {
-
-  font-family: "Patrick Hand", cursive;
-
-  font-size: 34px;
-  line-height: 1.45;
-
-  text-align: center;
-
-  color: var(--white-text);
+    font-size: 18px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.88);
 }
 
-/* LABELS */
+/* ── LABELS ── */
 
 .field-label {
-
-  font-family: "Patrick Hand", cursive;
-
-  font-size: 44px;
-  line-height: 1;
-
-  color: #A9B998;
-
-  margin-bottom: -6px;
+    font-size: 22px;
+    color: var(--green-mid);
+    margin-bottom: -2px;
 }
 
-/* FIELDS */
+/* ── FIELDS ── */
 
 .field {
-
-  width: 100%;
-
-  border: none;
-  outline: none;
-
-  background: var(--sage);
-
-  border-radius: 18px;
-
-  padding: 16px 20px;
-
-  font-family: "Patrick Hand", cursive;
-
-  font-size: 28px;
-
-  color: var(--white-text);
-
-  resize: none;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: var(--green);
+    border-radius: 14px;
+    padding: 12px 16px;
+    font-family: "Patrick Hand", cursive;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.92);
+    resize: none;
 }
 
 .field::placeholder {
+    color: rgba(255, 255, 255, 0.65);
+}
 
-  color: rgba(246, 242, 234, 0.82);
+.field:focus {
+    background: var(--green-mid);
 }
 
 /* TITLE */
 
 .title-field {
-
-  height: 88px;
-
-  font-size: 56px;
-
-  width: 640px;
-
-  flex: none;
+    height: 62px;
+    font-size: 26px;
+    border-radius: 18px;
+    padding: 14px 18px;
 }
 
 /* DESCRIPTION */
 
 .description-field {
-
-  height: 290px;
-
-  padding-top: 18px;
+    height: 190px;
 }
 
 /* ROW */
 
 .row {
-
-  display: flex;
-
-  gap: 20px;
+    display: flex;
+    gap: 14px;
 }
 
-/* GROUP */
+/* FIELD GROUP */
 
 .field-group {
-
-  flex: 1;
-
-  display: flex;
-  flex-direction: column;
-
-  gap: 6px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .year-group {
-
-  max-width: 290px;
+    max-width: 130px;
 }
 
 /* SELECT */
 
 .select-wrapper {
-
-  position: relative;
+    position: relative;
 }
 
 .select-field {
-
-  appearance: none;
-
-  cursor: pointer;
+    appearance: none;
+    cursor: pointer;
 }
 
 .arrow {
-
-  position: absolute;
-
-  right: 20px;
-  top: 50%;
-
-  transform: translateY(-50%);
-
-  font-size: 44px;
-
-  color: var(--pink);
-
-  pointer-events: none;
-}
-
-/* TEACHER */
-
-input.field {
-
-  height: 70px;
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: var(--pink-light);
+    pointer-events: none;
 }
 
 /* TAGS */
 
 .tags-field {
-
-  height: 170px;
-}
-
-.mushroot-logo {
-
-  position: absolute;
-
-  bottom: 18px;
-  left: 12px;
-
-  width: 220px;
-
-  z-index: 2;
-
-  pointer-events: none;
+    height: 110px;
 }
