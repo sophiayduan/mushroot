@@ -1,8 +1,8 @@
 // uploadpage.tsx
 
 import React, { useRef, useState } from "react";
-import Navbar from "./navbar";
-import "./uploadpage.css";
+import Navbar from "../../components/navbar/Navbar";
+import styles from "./uploadpage.module.css";
 
 interface UploadPageProps {
   sidebarSrc?: string;
@@ -28,45 +28,45 @@ export default function UploadPage({
   };
 
   return (
-    <div className="upload-page">
+    <div className={styles.uploadPage}>
 
       {/* SIDEBAR */}
-      <aside className="sidebar">
+      <aside className={styles.sidebar}>
 
         <img
           src={sidebarSrc}
           alt=""
-          className="sidebar-bg"
+          className={styles.sidebarBg}
           aria-hidden="true"
         />
         <img
           src="/title-logo.png"
           alt="Mush Root"
-          className="mushroot-logo"
+          className={styles.mushrootLogo}
         />
         <Navbar mushroomIconSrc={mushroomIconSrc} mushroomCount={0} />
 
       </aside>
 
       {/* MAIN */}
-      <main className="main-content">
+      <main className={styles.mainContent}>
 
         {/* LEFT */}
-        <section className="left-column">
+        <section className={styles.leftColumn}>
 
           {/* THUMBNAIL */}
-          <div className="card thumbnail-card">
+          <div className={`${styles.card} ${styles.thumbnailCard}`}>
 
-            <h2 className="hand-title">thumbnail</h2>
+            <h2 className={styles.handTitle}>thumbnail</h2>
 
             {thumbnail ? (
               <img
                 src={thumbnail}
                 alt="thumbnail"
-                className="thumbnail-preview"
+                className={styles.thumbnailPreview}
               />
             ) : (
-              <div className="thumbnail-placeholder" />
+              <div className={styles.thumbnailPlaceholder} />
             )}
 
             <input
@@ -78,7 +78,7 @@ export default function UploadPage({
             />
 
             <button
-              className="upload-btn"
+              className={styles.uploadBtn}
               onClick={() => thumbnailInputRef.current?.click()}
             >
               Upload
@@ -88,7 +88,7 @@ export default function UploadPage({
 
           {/* PDF */}
           <div
-            className="card pdf-card"
+            className={`${styles.card} ${styles.pdfCard}`}
             onClick={() => pdfInputRef.current?.click()}
           >
 
@@ -99,9 +99,9 @@ export default function UploadPage({
               hidden
             />
 
-            <h2 className="pdf-title">Upload here</h2>
+            <h2 className={styles.pdfTitle}>Upload here</h2>
 
-            <p className="pdf-subtitle">
+            <p className={styles.pdfSubtitle}>
               Upload a PDF or drag
               <br />
               and drop your test
@@ -114,49 +114,49 @@ export default function UploadPage({
         </section>
 
         {/* RIGHT */}
-        <section className="right-column">
+        <section className={styles.rightColumn}>
 
           {/* TITLE */}
           <input
-            className="field title-field"
+            className={`${styles.field} ${styles.titleField}`}
             placeholder="Title"
           />
 
           {/* DESCRIPTION */}
-          <label className="field-label">
+          <label className={styles.fieldLabel}>
             Description
           </label>
 
           <textarea
-            className="field description-field"
+            className={`${styles.field} ${styles.descriptionField}`}
             placeholder="text here"
           />
 
           {/* SUBJECT + YEAR */}
-          <div className="row">
+          <div className={styles.row}>
 
-            <div className="field-group">
+            <div className={styles.fieldGroup}>
 
-              <label className="field-label">
+              <label className={styles.fieldLabel}>
                 Subject
               </label>
 
               <input
-                className="field"
+                className={styles.field}
                 placeholder="Enter your course code"
               />
 
             </div>
 
-            <div className="field-group year-group">
+            <div className={`${styles.fieldGroup} ${styles.yearGroup}`}>
 
-              <label className="field-label">
+              <label className={styles.fieldLabel}>
                 Year
               </label>
 
-              <div className="select-wrapper">
+              <div className={styles.selectWrapper}>
 
-                <select className="field select-field">
+                <select className={`${styles.field} ${styles.selectField}`}>
 
                   <option value=""></option>
                   <option>2021</option>
@@ -168,7 +168,7 @@ export default function UploadPage({
 
                 </select>
 
-                <span className="arrow">⌄</span>
+                <span className={styles.arrow}>⌄</span>
 
               </div>
 
@@ -178,16 +178,16 @@ export default function UploadPage({
 
           {/* TEACHER */}
           <input
-            className="field"
+            className={styles.field}
             placeholder="Enter your teacher’s name"
           />
 
           {/* TAGS */}
-          <label className="field-label">
+          <label className={styles.fieldLabel}>
             Tags
           </label>
 
-          <textarea className="field tags-field" />
+          <textarea className={`${styles.field} ${styles.tagsField}`} />
 
         </section>
 
