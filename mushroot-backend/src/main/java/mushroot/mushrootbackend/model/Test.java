@@ -3,6 +3,8 @@ package mushroot.mushrootbackend.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Data               // Lombok magic: auto-generates getters, setters, toString
 @Entity             // Tells JPA: "this is a database table"
 @Table(name = "tests")  // The table will be called "tests" in MySQL
@@ -26,11 +28,13 @@ public class Test {
     private String teacherName;
 
     // @Lab
-    @Column(nullable = false, columnDefinition = "BLOB")
+    @Column(nullable = false, columnDefinition = "LONGBLOB")
     private byte[] thumbnail;
 
     //@Lab
     @Column(nullable = false, columnDefinition = "MEDIUMBLOB")
     private byte[] data;
 
+    @Column (nullable = true)
+    private List<String> tags;
 }
