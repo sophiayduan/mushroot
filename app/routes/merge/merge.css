@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Chango&family=Margarine&display=swap');
+
+:root {
+    --cream-light: #FAF4E9;
+    --cream: #FFF6E4;
+    --cream-dark: #ffefcf;
+    --pink: #FDABAB;
+    --pink-light: #F3CBC5;
+    --green-light: #BECCC0;
+    --green: #AABDA0;
+    --green-mid: #7E9278;
+    --green-mid-dark: #5B695D;
+    --green-dark: #435245;
+    --red-dark: #B30000;
+    --red: #E33B3B;
+    --brown: #AE986F;
+    --brown-dark: #96876C;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cream-dark);
+    font-family: "Margarine", sans-serif;
+}
+
+.merge {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+main {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    max-height: 100vh;
+}
+
+.title-text {
+    text-align: center;
+}
+
+h1 {
+    font-family: "Chango", sans-serif;
+    margin: 0;
+}
+
+.spawn-btn {
+    padding: 10px 20px;
+    margin: 10px 0;
+
+    font-family: "Chango", sans-serif;
+    font-size: 16px;
+    color: var(--cream);
+
+    background-color: var(--green-dark);
+    border: none;
+    border-radius: 12px;
+
+    transition: all 0.15s ease;
+}
+
+.spawn-btn:hover {
+    transform: scale(1.05);
+}
+
+.grid-box {
+    width: min(85vmin, 420px);
+    aspect-ratio: 4 / 4;
+    display: grid;
+    gap: 8px;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+
+    padding: 10px;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        180deg,var(--green-mid-dark) 0%,var(--green-dark) 100%);
+
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.grid {
+    background: linear-gradient(180deg,var(--green-light) 0%,var(--green) 100%);
+
+    border-radius: 8px;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.merge-item {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+}
+
+.stats-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.score,
+.mush-count {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.mini-mushroom {
+    width: 30px;
+    height: 30px;
+}
+
+.mushrooms {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}

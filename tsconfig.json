@@ -17,20 +17,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
+    "types": ["./global.d.ts"]
   },
   "include": [
-    "next-env.d.ts",
-    ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts",
+    "**/*.d.ts",
     "**/*.mts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "app/routes/merge/DragItem.tsx", "app/routes/merge/DropZone.tsx", "app/routes/merge/drag.tsx"  ],
   "exclude": [
     "node_modules"
   ]
