@@ -1,315 +1,274 @@
+/* uploadpage.css */
 
-@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700&display=swap");
-
-/* ── TOKENS ── */
-:root {
-  --sage:        #8aaa8a;
-  --sage-dark:   #6e8f6e;
-  --sage-input:  #7d9e7d;
-  --cream:       #f2ece0;
-  --blush:       #e8b8b8;
-  --blush-hover: #d9a5a5;
-  --text-dark:   #3b3b2f;
-  --text-light:  #f5f0e8;
-  --nav-bg:      #f7f1e5;
-  --nav-border:  #d4c9b0;
-  --radius:      14px;
-  --radius-sm:   8px;
-  --font-head:   "Baloo 2", cursive;
-  --font-body:   "Nunito", sans-serif;
+.upload-page, .upload-page * {
+  all: revert;
+  box-sizing: border-box;
 }
 
-/* ── RESET ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Patrick+Hand&display=swap');
+
+:root {
+    --cream-light:    #e9faf5;
+    --pink:           #FDABAB;
+    --pink-light:     #F3CBC5;
+    --green:          #AABDA0;
+    --green-mid:      #7E9278;
+    --green-dark:     #435245;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--cream-light);
+    overflow: hidden;
+    font-family: "Patrick Hand", cursive;
+}
 
 /* ── PAGE ── */
+
 .upload-page {
-  display: flex;
-  min-height: 100vh;
-  background-color: var(--cream);
-  background-size: cover;
-  background-position: left center;
-  background-repeat: no-repeat;
-  font-family: var(--font-body);
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 255px 1fr;
+    background: var(--cream-light);
+    overflow: hidden;
 }
 
-/* ─────────────── SIDEBAR NAV ─────────────── */
+/* ── SIDEBAR ── */
+
 .sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 24px 16px;
-  width: 190px;
-  flex-shrink: 0;
-  /* sits on top of the log image */
-  z-index: 10;
+    position: relative;
+    width: 255px;
+    height: 100vh;
+    overflow: hidden;
 }
 
-.nav-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  background: var(--nav-bg);
-  border: 2.5px solid var(--nav-border);
-  border-radius: 999px;
-  padding: 10px 18px;
-  font-family: var(--font-head);
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--text-dark);
-  cursor: pointer;
-  transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.10);
-  white-space: nowrap;
+.sidebar-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: auto;
+    object-fit: contain;
 }
 
-.nav-btn:hover {
-  background: #ede4cc;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+.mushroot-logo {
+    position: absolute;
+    bottom: 10px;
+    left: 14px;
+    z-index: 3;
 }
 
-.nav-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
-}
+/* ── MAIN ── */
 
-.nav-btn--mushroom {
-  gap: 8px;
-}
-
-.mushroom-icon {
-  width: 26px;
-  height: 26px;
-  object-fit: contain;
-}
-
-/* ─────────────── MAIN CONTENT ─────────────── */
 .main-content {
-  display: flex;
-  flex: 1;
-  gap: 20px;
-  padding: 24px 28px 24px 16px;
-  align-items: flex-start;
+    display: grid;
+    grid-template-columns: 480px 1fr;
+    gap: 20px;
+    padding: 28px 20px 28px 10px;
+    align-items: start;
+    overflow: hidden;
 }
 
-/* ── MIDDLE COLUMN ── */
-.middle-col {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  flex: 1.1;
-  max-width: 480px;
+/* ── LEFT COLUMN ── */
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 /* ── RIGHT COLUMN ── */
-.right-col {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  flex: 1.2;
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-/* ─────────────── GREEN BOXES ─────────────── */
-.green-box {
-  background: var(--sage);
-  border-radius: var(--radius);
-  padding: 18px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
+/* ── CARDS ── */
+
+.card {
+    background: var(--green);
+    border-radius: 22px;
 }
 
-/* Thumbnail */
-.thumbnail-box {
-  min-height: 200px;
+/* THUMBNAIL */
+
+.thumbnail-card {
+    height: 220px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
 }
 
-.box-label {
-  font-family: var(--font-head);
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: var(--text-light);
-  align-self: flex-start;
+.hand-title {
+    font-size: 26px;
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 10px;
+    font-weight: 400;
 }
 
 .thumbnail-placeholder {
-  width: 100%;
-  height: 90px;
-  background: rgba(255,255,255,0.12);
-  border-radius: var(--radius-sm);
+    width: 100%;
+    flex: 1;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .thumbnail-preview {
-  width: 100%;
-  max-height: 160px;
-  object-fit: cover;
-  border-radius: var(--radius-sm);
+    width: 100%;
+    flex: 1;
+    object-fit: cover;
+    border-radius: 14px;
 }
 
-/* Pink upload button */
+/* UPLOAD BUTTON */
+
 .upload-btn {
-  background: var(--blush);
-  border: none;
-  border-radius: var(--radius-sm);
-  padding: 10px 40px;
-  font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text-dark);
-  cursor: pointer;
-  transition: background 0.15s, transform 0.1s;
+    margin: 12px auto 0 auto;
+    width: 190px;
+    height: 52px;
+    border: none;
+    border-radius: 14px;
+    background: var(--pink-light);
+    font-family: "Patrick Hand", cursive;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.92);
+    cursor: pointer;
+    transition: 0.15s;
+    flex-shrink: 0;
 }
 
 .upload-btn:hover {
-  background: var(--blush-hover);
-  transform: translateY(-1px);
+    transform: translateY(-2px);
+    background: var(--pink);
 }
 
-/* Drop zone */
-.drop-box {
-  min-height: 200px;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.15s, outline 0.15s;
-  outline: 3px dashed transparent;
+/* PDF */
+
+.pdf-card {
+    height: 248px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.15s;
 }
 
-.drop-box:hover {
-  background: var(--sage-dark);
+.pdf-card:hover {
+    background: var(--green-mid);
 }
 
-.drop-box--active {
-  outline-color: var(--text-light);
-  background: var(--sage-dark);
+.pdf-title {
+    font-size: 36px;
+    color: rgba(255, 255, 255, 0.92);
+    font-weight: 400;
+    margin-bottom: 10px;
 }
 
-.drop-title {
-  font-family: var(--font-head);
-  font-size: 1.7rem;
-  font-weight: 700;
-  color: var(--text-light);
-  text-align: center;
+.pdf-subtitle {
+    font-size: 18px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.88);
 }
 
-.drop-sub {
-  font-size: 1rem;
-  color: var(--text-light);
-  text-align: center;
-  max-width: 280px;
-  line-height: 1.5;
-}
+/* ── LABELS ── */
 
-/* ─────────────── RIGHT COLUMN FIELDS ─────────────── */
 .field-label {
-  font-family: var(--font-head);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text-dark);
-  margin-bottom: -6px;
+    font-size: 22px;
+    color: var(--green-mid);
+    margin-bottom: -2px;
 }
 
-/* All green inputs / textareas share this class */
-.green-input {
-  width: 100%;
-  background: var(--sage);
-  border: none;
-  border-radius: var(--radius-sm);
-  padding: 12px 14px;
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  color: var(--text-light);
-  outline: none;
-  transition: background 0.15s, box-shadow 0.15s;
-  resize: none;
+/* ── FIELDS ── */
+
+.field {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: var(--green);
+    border-radius: 14px;
+    padding: 12px 16px;
+    font-family: "Patrick Hand", cursive;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.92);
+    resize: none;
 }
 
-.green-input::placeholder {
-  color: rgba(245,240,232,0.70);
+.field::placeholder {
+    color: rgba(255, 255, 255, 0.65);
 }
 
-.green-input:focus {
-  background: var(--sage-dark);
-  box-shadow: 0 0 0 3px rgba(110,143,110,0.40);
+.field:focus {
+    background: var(--green-mid);
 }
 
-/* Title — bigger text */
-.title-input {
-  font-family: var(--font-head);
-  font-size: 1.3rem;
-  font-weight: 700;
-  padding: 14px 16px;
+/* TITLE */
+
+.title-field {
+    height: 62px;
+    font-size: 26px;
+    border-radius: 18px;
+    padding: 14px 18px;
 }
 
-/* Description */
-.description-input {
-  min-height: 160px;
+/* DESCRIPTION */
+
+.description-field {
+    height: 190px;
 }
 
-/* Subject + Year row */
-.row-fields {
-  display: flex;
-  gap: 14px;
-  align-items: flex-end;
+/* ROW */
+
+.row {
+    display: flex;
+    gap: 14px;
 }
+
+/* FIELD GROUP */
 
 .field-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  flex: 1;
-}
-
-/* Custom select wrapper */
-.select-wrapper {
-  position: relative;
-  padding: 0;
-  display: flex;
-  align-items: center;
-}
-
-.select-wrapper select {
-  width: 100%;
-  background: transparent;
-  border: none;
-  color: var(--text-light);
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  padding: 12px 36px 12px 14px;
-  appearance: none;
-  cursor: pointer;
-  outline: none;
-}
-
-.select-wrapper select option {
-  background: var(--sage-dark);
-  color: var(--text-light);
-}
-
-.select-arrow {
-  position: absolute;
-  right: 12px;
-  font-size: 1.2rem;
-  color: var(--blush);
-  pointer-events: none;
-  transform: rotate(90deg);
-}
-
-/* Tags */
-.tags-input {
-  min-height: 80px;
-}
-
-/* ─────────────── RESPONSIVE ─────────────── */
-@media (max-width: 900px) {
-  .main-content {
+    flex: 1;
+    display: flex;
     flex-direction: column;
-  }
-  .middle-col,
-  .right-col {
-    max-width: 100%;
-    width: 100%;
-  }
+    gap: 4px;
+}
+
+.year-group {
+    max-width: 130px;
+}
+
+/* SELECT */
+
+.select-wrapper {
+    position: relative;
+}
+
+.select-field {
+    appearance: none;
+    cursor: pointer;
+}
+
+.arrow {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: var(--pink-light);
+    pointer-events: none;
+}
+
+/* TAGS */
+
+.tags-field {
+    height: 110px;
 }
