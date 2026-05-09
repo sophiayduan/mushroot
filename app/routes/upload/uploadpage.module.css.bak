@@ -1,0 +1,274 @@
+/* uploadpage.css */
+
+.uploadPage, .uploadPage * {
+  all: revert;
+  boxSizing: borderBox;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Patrick+Hand&display=swap');
+
+:root {
+    -CreamLight:    #e9faf5;
+    -Pink:           #FDABAB;
+    -PinkLight:     #F3CBC5;
+    -Green:          #AABDA0;
+    -GreenMid:      #7E9278;
+    -GreenDark:     #435245;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    boxSizing: borderBox;
+}
+
+body {
+    background: var(-CreamLight);
+    overflow: hidden;
+    fontFamily: "Patrick Hand", cursive;
+}
+
+/* ── PAGE ── */
+
+.uploadPage {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    gridTemplateColumns: 255px 1fr;
+    background: var(-CreamLight);
+    overflow: hidden;
+}
+
+/* ── SIDEBAR ── */
+
+.sidebar {
+    position: relative;
+    width: 255px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.sidebarBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: auto;
+    objectFit: contain;
+}
+
+.mushrootLogo {
+    position: absolute;
+    bottom: 10px;
+    left: 14px;
+    zIndex: 3;
+}
+
+/* ── MAIN ── */
+
+.mainContent {
+    display: grid;
+    gridTemplateColumns: 480px 1fr;
+    gap: 20px;
+    padding: 28px 20px 28px 10px;
+    alignItems: start;
+    overflow: hidden;
+}
+
+/* ── LEFT COLUMN ── */
+
+.leftColumn {
+    display: flex;
+    flexDirection: column;
+    gap: 16px;
+}
+
+/* ── RIGHT COLUMN ── */
+
+.rightColumn {
+    display: flex;
+    flexDirection: column;
+    gap: 10px;
+}
+
+/* ── CARDS ── */
+
+.card {
+    background: var(-Green);
+    borderRadius: 22px;
+}
+
+/* THUMBNAIL */
+
+.thumbnailCard {
+    height: 220px;
+    padding: 18px 20px;
+    display: flex;
+    flexDirection: column;
+}
+
+.handTitle {
+    fontSize: 26px;
+    color: rgba(255, 255, 255, 0.88);
+    marginBottom: 10px;
+    fontWeight: 400;
+}
+
+.thumbnailPlaceholder {
+    width: 100%;
+    flex: 1;
+    borderRadius: 14px;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.thumbnailPreview {
+    width: 100%;
+    flex: 1;
+    objectFit: cover;
+    borderRadius: 14px;
+}
+
+/* UPLOAD BUTTON */
+
+.uploadBtn {
+    margin: 12px auto 0 auto;
+    width: 190px;
+    height: 52px;
+    border: none;
+    borderRadius: 14px;
+    background: var(-PinkLight);
+    fontFamily: "Patrick Hand", cursive;
+    fontSize: 24px;
+    color: rgba(255, 255, 255, 0.92);
+    cursor: pointer;
+    transition: 0.15s;
+    flexShrink: 0;
+}
+
+.uploadBtn:hover {
+    transform: translateY(-2px);
+    background: var(-Pink);
+}
+
+/* PDF */
+
+.pdfCard {
+    height: 248px;
+    display: flex;
+    flexDirection: column;
+    justifyContent: center;
+    alignItems: center;
+    textAlign: center;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.pdfCard:hover {
+    background: var(-GreenMid);
+}
+
+.pdfTitle {
+    fontSize: 36px;
+    color: rgba(255, 255, 255, 0.92);
+    fontWeight: 400;
+    marginBottom: 10px;
+}
+
+.pdfSubtitle {
+    fontSize: 18px;
+    lineHeight: 1.5;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+/* ── LABELS ── */
+
+.fieldLabel {
+    fontSize: 22px;
+    color: var(-GreenMid);
+    marginBottom: -2px;
+}
+
+/* ── FIELDS ── */
+
+.field {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: var(-Green);
+    borderRadius: 14px;
+    padding: 12px 16px;
+    fontFamily: "Patrick Hand", cursive;
+    fontSize: 16px;
+    color: rgba(255, 255, 255, 0.92);
+    resize: none;
+}
+
+.field::placeholder {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.field:focus {
+    background: var(-GreenMid);
+}
+
+/* TITLE */
+
+.titleField {
+    height: 62px;
+    fontSize: 26px;
+    borderRadius: 18px;
+    padding: 14px 18px;
+}
+
+/* DESCRIPTION */
+
+.descriptionField {
+    height: 190px;
+}
+
+/* ROW */
+
+.row {
+    display: flex;
+    gap: 14px;
+}
+
+/* FIELD GROUP */
+
+.fieldGroup {
+    flex: 1;
+    display: flex;
+    flexDirection: column;
+    gap: 4px;
+}
+
+.yearGroup {
+    maxWidth: 130px;
+}
+
+/* SELECT */
+
+.selectWrapper {
+    position: relative;
+}
+
+.selectField {
+    appearance: none;
+    cursor: pointer;
+}
+
+.arrow {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    fontSize: 20px;
+    color: var(-PinkLight);
+    pointerEvents: none;
+}
+
+/* TAGS */
+
+.tagsField {
+    height: 110px;
+}
