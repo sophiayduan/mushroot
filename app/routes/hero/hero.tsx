@@ -1,4 +1,5 @@
 import "./hero.css";
+import  Navbar from "../../components/navbar/Navbar";
 
 function Hero() {
     return(
@@ -76,6 +77,8 @@ function Hero() {
                 </div>
             </div>
             <img className="logo" src="/title-logo.png" alt="mush root text on top of a log" />
+
+            <Navbar/>
         </div>
     )
 }
