@@ -9,11 +9,11 @@ interface NavbarProps {
 }
 
 const NAV_ITEMS = [
-  { label: "Home", to: "/" },
-  { label: "Archives", to: "/archives" },
-  { label: "Upload", to: "/upload" },
+  { id: "hero-route", label: "Home", to: "/hero" },
+  { id: "archive-route", label: "Archives", to: "/archive" },
+  { id: "upload-route", label: "Upload", to: "/upload" },
   { label: "Lock In", to: "/lockin" },
-  { label: "Profile", to: "/profile" },
+  { id: "accesibility-route", label: "Settings", to: "/accesibility" },
 ];
 
 export default function Navbar({
