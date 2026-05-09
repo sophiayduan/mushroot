@@ -1,41 +1,41 @@
 /* uploadpage.css */
 
-.upload-page, .upload-page * {
+.uploadPage, .uploadPage * {
   all: revert;
-  box-sizing: border-box;
+  boxSizing: borderBox;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Patrick+Hand&display=swap');
 
 :root {
-    --cream-light:    #e9faf5;
-    --pink:           #FDABAB;
-    --pink-light:     #F3CBC5;
-    --green:          #AABDA0;
-    --green-mid:      #7E9278;
-    --green-dark:     #435245;
+    -CreamLight:    #e9faf5;
+    -Pink:           #FDABAB;
+    -PinkLight:     #F3CBC5;
+    -Green:          #AABDA0;
+    -GreenMid:      #7E9278;
+    -GreenDark:     #435245;
 }
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    boxSizing: borderBox;
 }
 
 body {
-    background: var(--cream-light);
+    background: var(-CreamLight);
     overflow: hidden;
-    font-family: "Patrick Hand", cursive;
+    fontFamily: "Patrick Hand", cursive;
 }
 
 /* ── PAGE ── */
 
-.upload-page {
+.uploadPage {
     width: 100%;
     height: 100vh;
     display: grid;
-    grid-template-columns: 255px 1fr;
-    background: var(--cream-light);
+    gridTemplateColumns: 255px 1fr;
+    background: var(-CreamLight);
     overflow: hidden;
 }
 
@@ -48,144 +48,144 @@ body {
     overflow: hidden;
 }
 
-.sidebar-bg {
+.sidebarBg {
     position: absolute;
     top: 0;
     left: 0;
     height: 100vh;
     width: auto;
-    object-fit: contain;
+    objectFit: contain;
 }
 
-.mushroot-logo {
+.mushrootLogo {
     position: absolute;
     bottom: 10px;
     left: 14px;
-    z-index: 3;
+    zIndex: 3;
 }
 
 /* ── MAIN ── */
 
-.main-content {
+.mainContent {
     display: grid;
-    grid-template-columns: 480px 1fr;
+    gridTemplateColumns: 480px 1fr;
     gap: 20px;
     padding: 28px 20px 28px 10px;
-    align-items: start;
+    alignItems: start;
     overflow: hidden;
 }
 
 /* ── LEFT COLUMN ── */
 
-.left-column {
+.leftColumn {
     display: flex;
-    flex-direction: column;
+    flexDirection: column;
     gap: 16px;
 }
 
 /* ── RIGHT COLUMN ── */
 
-.right-column {
+.rightColumn {
     display: flex;
-    flex-direction: column;
+    flexDirection: column;
     gap: 10px;
 }
 
 /* ── CARDS ── */
 
 .card {
-    background: var(--green);
-    border-radius: 22px;
+    background: var(-Green);
+    borderRadius: 22px;
 }
 
 /* THUMBNAIL */
 
-.thumbnail-card {
+.thumbnailCard {
     height: 220px;
     padding: 18px 20px;
     display: flex;
-    flex-direction: column;
+    flexDirection: column;
 }
 
-.hand-title {
-    font-size: 26px;
+.handTitle {
+    fontSize: 26px;
     color: rgba(255, 255, 255, 0.88);
-    margin-bottom: 10px;
-    font-weight: 400;
+    marginBottom: 10px;
+    fontWeight: 400;
 }
 
-.thumbnail-placeholder {
+.thumbnailPlaceholder {
     width: 100%;
     flex: 1;
-    border-radius: 14px;
+    borderRadius: 14px;
     background: rgba(255, 255, 255, 0.08);
 }
 
-.thumbnail-preview {
+.thumbnailPreview {
     width: 100%;
     flex: 1;
-    object-fit: cover;
-    border-radius: 14px;
+    objectFit: cover;
+    borderRadius: 14px;
 }
 
 /* UPLOAD BUTTON */
 
-.upload-btn {
+.uploadBtn {
     margin: 12px auto 0 auto;
     width: 190px;
     height: 52px;
     border: none;
-    border-radius: 14px;
-    background: var(--pink-light);
-    font-family: "Patrick Hand", cursive;
-    font-size: 24px;
+    borderRadius: 14px;
+    background: var(-PinkLight);
+    fontFamily: "Patrick Hand", cursive;
+    fontSize: 24px;
     color: rgba(255, 255, 255, 0.92);
     cursor: pointer;
     transition: 0.15s;
-    flex-shrink: 0;
+    flexShrink: 0;
 }
 
-.upload-btn:hover {
+.uploadBtn:hover {
     transform: translateY(-2px);
-    background: var(--pink);
+    background: var(-Pink);
 }
 
 /* PDF */
 
-.pdf-card {
+.pdfCard {
     height: 248px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    flexDirection: column;
+    justifyContent: center;
+    alignItems: center;
+    textAlign: center;
     cursor: pointer;
     transition: background 0.15s;
 }
 
-.pdf-card:hover {
-    background: var(--green-mid);
+.pdfCard:hover {
+    background: var(-GreenMid);
 }
 
-.pdf-title {
-    font-size: 36px;
+.pdfTitle {
+    fontSize: 36px;
     color: rgba(255, 255, 255, 0.92);
-    font-weight: 400;
-    margin-bottom: 10px;
+    fontWeight: 400;
+    marginBottom: 10px;
 }
 
-.pdf-subtitle {
-    font-size: 18px;
-    line-height: 1.5;
+.pdfSubtitle {
+    fontSize: 18px;
+    lineHeight: 1.5;
     color: rgba(255, 255, 255, 0.88);
 }
 
 /* ── LABELS ── */
 
-.field-label {
-    font-size: 22px;
-    color: var(--green-mid);
-    margin-bottom: -2px;
+.fieldLabel {
+    fontSize: 22px;
+    color: var(-GreenMid);
+    marginBottom: -2px;
 }
 
 /* ── FIELDS ── */
@@ -194,11 +194,11 @@ body {
     width: 100%;
     border: none;
     outline: none;
-    background: var(--green);
-    border-radius: 14px;
+    background: var(-Green);
+    borderRadius: 14px;
     padding: 12px 16px;
-    font-family: "Patrick Hand", cursive;
-    font-size: 16px;
+    fontFamily: "Patrick Hand", cursive;
+    fontSize: 16px;
     color: rgba(255, 255, 255, 0.92);
     resize: none;
 }
@@ -208,21 +208,21 @@ body {
 }
 
 .field:focus {
-    background: var(--green-mid);
+    background: var(-GreenMid);
 }
 
 /* TITLE */
 
-.title-field {
+.titleField {
     height: 62px;
-    font-size: 26px;
-    border-radius: 18px;
+    fontSize: 26px;
+    borderRadius: 18px;
     padding: 14px 18px;
 }
 
 /* DESCRIPTION */
 
-.description-field {
+.descriptionField {
     height: 190px;
 }
 
@@ -235,24 +235,24 @@ body {
 
 /* FIELD GROUP */
 
-.field-group {
+.fieldGroup {
     flex: 1;
     display: flex;
-    flex-direction: column;
+    flexDirection: column;
     gap: 4px;
 }
 
-.year-group {
-    max-width: 130px;
+.yearGroup {
+    maxWidth: 130px;
 }
 
 /* SELECT */
 
-.select-wrapper {
+.selectWrapper {
     position: relative;
 }
 
-.select-field {
+.selectField {
     appearance: none;
     cursor: pointer;
 }
@@ -262,13 +262,13 @@ body {
     right: 14px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 20px;
-    color: var(--pink-light);
-    pointer-events: none;
+    fontSize: 20px;
+    color: var(-PinkLight);
+    pointerEvents: none;
 }
 
 /* TAGS */
 
-.tags-field {
+.tagsField {
     height: 110px;
 }
