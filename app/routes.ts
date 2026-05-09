@@ -1,5 +1,7 @@
 import { type RouteConfig, route, index } from "@react-router/dev/routes";
 
 export default [
-    index("routes/merge/merge.tsx"),
+    index("routes/upload/uploadpage.tsx"),
+    route("upload", "routes/upload/uploadpage.tsx"),
+    route("dashboard", "routes/merge/merge.tsx"),
 ] satisfies RouteConfig;

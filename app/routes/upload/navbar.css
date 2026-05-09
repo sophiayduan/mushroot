@@ -1,0 +1,68 @@
+/* navbar.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&display=swap');
+
+.mushroom-nav {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding-top: 32px;
+    z-index: 3;
+}
+
+/* NAV BUTTONS */
+
+.nav-pill {
+    width: 172px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 18px;
+    background: #F8F4EC;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
+
+    text-decoration: none;
+
+    font-family: "Baloo 2", cursive;
+    font-size: 21px;
+    font-weight: 700;
+    color: #4D5D50;
+
+    transition: 0.15s;
+}
+
+.nav-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+.nav-pill.active {
+    background: #d6e4d0;
+    color: #2e4a2e;
+}
+
+/* MUSHROOM COUNTER */
+
+.mushroom-pill {
+    position: absolute;
+    bottom: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 172px;
+    height: 50px;
+    gap: 8px;
+}
+
+/* ICON */
+
+.mush-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
