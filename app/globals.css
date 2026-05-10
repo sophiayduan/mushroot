@@ -44,11 +44,8 @@ body,
 }
 
 /* TREE IMAGE */
-
-
 .global-sidebar-bg {
     position: absolute;
-
 
     height: 100vh;
     width: 700px;         
@@ -58,7 +55,6 @@ body,
     z-index: 1;
     pointer-events: none;
 }
-
 
 /* NAV LAYER */
 
@@ -72,8 +68,8 @@ body,
 .global-sidebar-logo {
     position: absolute;
 
-    left: 25px;
-    bottom: 5px;
+    left: 0%;
+    bottom: 0%;
 
     width: 230px;
     height: auto;

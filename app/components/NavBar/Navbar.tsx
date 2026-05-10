@@ -34,7 +34,6 @@ export default function Navbar({
         >
           {item.label}
         </NavLink>
-
       ))}
 
       <div className="nav-pill mushroom-pill">
