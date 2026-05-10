@@ -93,25 +93,7 @@ export default function UploadPage({
     return (
         <div className="upload-page">
 
-            {/* SIDEBAR */}
-            <aside className="sidebar">
-
-                <img
-                    src={sidebarSrc}
-                    alt=""
-                    className="sidebar-bg"
-                    aria-hidden="true"
-                />
-                <img
-                    src="/title-logo.png"
-                    alt="Mush Root"
-                    className="mushroot-logo"
-                />
-                <Navbar mushroomIconSrc={mushroomIconSrc} mushroomCount={0}/>
-
-            </aside>
-
-            {/* MAIN */}
+           {/* MAIN */}
             <main className="main-content">
 
                 {/* LEFT */}
