@@ -11,8 +11,21 @@ function TestCard({ test }: TestCardProps) {
         ? `data:image/jpeg;base64,${test.thumbnail}`
         : null;
 
+    function openPdf() {
+        if (!test.data) return;
+        // test.data is a base64 string from the backend
+        const byteChars = atob(test.data);
+        const byteArray = new Uint8Array(byteChars.length);
+        for (let i = 0; i < byteChars.length; i++) {
+            byteArray[i] = byteChars.charCodeAt(i);
+        }
+        const blob = new Blob([byteArray], { type: "application/pdf" });
+        const url = URL.createObjectURL(blob);
+        window.open(url, "_blank");
+    }
+
     return (
-        <div className="bg-[#ffefcf] rounded-xl overflow-hidden">
+        <div className="bg-[#ffefcf] rounded-xl overflow-hidden cursor-pointer" onClick={openPdf}>
             <div className="w-full h-32 bg-[#e8d5a0]">
                 {thumbnailSrc
                     ? <img src={thumbnailSrc} alt={test.title} className="w-full h-full object-cover" />
