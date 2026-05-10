@@ -1,6 +1,6 @@
 // uploadpage.tsx
 
-import React, { useRef, useState } from "react";
+import React, {useRef, useState} from "react";
 import Navbar from "../../components/NavBar/Navbar";
 import "./upload.css";
 
@@ -33,7 +33,7 @@ export default function UploadPage({
     const pdfInputRef = useRef<HTMLInputElement>(null);
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) {
-        setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
+        setForm(prev => ({...prev, [e.target.name]: e.target.value}));
     }
 
     const handleThumbnailUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -45,8 +45,8 @@ export default function UploadPage({
     };
 
     async function handleSubmit() {
-        if (!thumbnailFile || !pdfFile) {
-            setError("Please attach both a thumbnail and a PDF.");
+        if (!pdfFile) {
+            setError("Please attach a PDF.");
             return;
         }
         if (!form.title || !form.courseCode || !form.year || !form.teacherName) {
@@ -59,8 +59,16 @@ export default function UploadPage({
         fd.append("courseCode", form.courseCode);
         fd.append("year", form.year);
         fd.append("teacherName", form.teacherName);
-        fd.append("thumbnail", thumbnailFile);
         fd.append("data", pdfFile);
+
+        // use uploaded thumbnail or fall back to default
+        if (thumbnailFile) {
+            fd.append("thumbnail", thumbnailFile);
+        } else {
+            const defaultRes = await fetch("/thumbnailFiller.png");
+            const defaultBlob = await defaultRes.blob();
+            fd.append("thumbnail", defaultBlob, "thumbnailFiller.png");
+        }
 
         setLoading(true);
         setError(null);
@@ -71,8 +79,7 @@ export default function UploadPage({
                 body: fd,
             });
             if (!res.ok) throw new Error(`HTTP ${res.status}`);
-            // clear form on success
-            setForm({ title: "", courseCode: "", year: "", teacherName: "" });
+            setForm({title: "", courseCode: "", year: "", teacherName: ""});
             setThumbnail(null);
             setThumbnailFile(null);
             setPdfFile(null);
@@ -100,7 +107,7 @@ export default function UploadPage({
                     alt="Mush Root"
                     className="mushroot-logo"
                 />
-                <Navbar mushroomIconSrc={mushroomIconSrc} mushroomCount={0} />
+                <Navbar mushroomIconSrc={mushroomIconSrc} mushroomCount={0}/>
 
             </aside>
 
@@ -111,20 +118,19 @@ export default function UploadPage({
                 <section className="left-column">
 
                     {/* THUMBNAIL */}
-                    <div className="card thumbnail-card">
-
-                        <h2 className="hand-title">thumbnail</h2>
-
-                        {thumbnail ? (
-                            <img
-                                src={thumbnail}
-                                alt="thumbnail"
-                                className="thumbnail-preview"
-                            />
-                        ) : (
-                            <div className="thumbnail-placeholder" />
-                        )}
-
+                    <div
+                        className="card thumbnail-card overflow-hidden"
+                        onClick={() => thumbnailInputRef.current?.click()}
+                        onDragOver={e => e.preventDefault()}
+                        onDrop={e => {
+                            e.preventDefault();
+                            const file = e.dataTransfer.files?.[0];
+                            if (file && file.type.startsWith("image/")) {
+                                setThumbnail(URL.createObjectURL(file));
+                                setThumbnailFile(file);
+                            }
+                        }}
+                    >
                         <input
                             ref={thumbnailInputRef}
                             type="file"
@@ -133,21 +139,35 @@ export default function UploadPage({
                             onChange={handleThumbnailUpload}
                         />
 
-                        <button
-                            className="upload-btn"
-                            onClick={() => thumbnailInputRef.current?.click()}
-                        >
-                            Upload
-                        </button>
-
+                        {thumbnail ? (
+                            <img src={thumbnail} alt="thumbnail" className="thumbnail-preview"/>
+                        ) : (
+                            <div className="flex flex-col items-center">
+                                <h2 className="thumbnail-title">Thumbnail</h2>
+                                <p className="thumbnail-subtitle">
+                                    Upload an image or drag
+                                    <br/>
+                                    and drop your thumbnail here!
+                                    <br/>
+                                    (optional)
+                                </p>
+                            </div>
+                        )}
                     </div>
 
                     {/* PDF */}
                     <div
                         className="card pdf-card"
                         onClick={() => pdfInputRef.current?.click()}
+                        onDragOver={e => e.preventDefault()}
+                        onDrop={e => {
+                            e.preventDefault();
+                            const file = e.dataTransfer.files?.[0];
+                            if (file && file.type === "application/pdf") {
+                                setPdfFile(file);
+                            }
+                        }}
                     >
-
                         <input
                             ref={pdfInputRef}
                             type="file"
@@ -156,16 +176,11 @@ export default function UploadPage({
                             onChange={e => setPdfFile(e.target.files?.[0] ?? null)}
                         />
 
-                        <h2 className="pdf-title">Upload here</h2>
+                        <h2 className="pdf-title">{pdfFile ? pdfFile.name : "Test PDF"}</h2>
 
                         <p className="pdf-subtitle">
-                            Upload a PDF or drag
-                            <br />
-                            and drop your test
-                            <br />
-                            here!
+                            {pdfFile ? "Click or drag to replace" : <>Upload a PDF or drag<br />and drop your test here!</>}
                         </p>
-
                     </div>
 
                     {/*UPLOAD*/}
@@ -232,7 +247,8 @@ export default function UploadPage({
 
                             <div className="select-wrapper">
 
-                                <select className="field select-field" name="year" value={form.year} onChange={handleChange}>
+                                <select className="field select-field" name="year" value={form.year}
+                                        onChange={handleChange}>
                                     <option value=""></option>
                                     <option>2021</option>
                                     <option>2022</option>
@@ -264,7 +280,7 @@ export default function UploadPage({
                         Tags
                     </label>
 
-                    <textarea className="field tags-field" />
+                    <textarea className="field tags-field"/>
 
                 </section>
 
