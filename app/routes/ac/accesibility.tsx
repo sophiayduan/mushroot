@@ -3,10 +3,17 @@ import { useOutletContext } from "react-router";
 
 
 function Accesibility() {
-const { subwaySurf, setSubwaySurf } = useOutletContext<{ subwaySurf: boolean; setSubwaySurf: (v: boolean) => void }>();
+const { subwaySurf, setSubwaySurf, lineFollow, setLineFollow } = useOutletContext<{
+    subwaySurf: boolean;
+    setSubwaySurf: (v: boolean) => void;
+    lineFollow: boolean;
+    setLineFollow: (v: boolean) => void;
+}>();
+
   const [darkMode, setDarkMode] = useState(false);
-  const [linefollow, setLineFollowing] = useState(false);
   const [animations, setAnimations] = useState(false);
+  const [bw, setBlackWhite] = useState(false);
+  const [enableGame, setGame] = useState(false);
 
   return (
     <main className="bg-[#FAF4E9] h-screen flex flex-col items-center">
@@ -18,12 +25,11 @@ const { subwaySurf, setSubwaySurf } = useOutletContext<{ subwaySurf: boolean; se
         <div onClick ={() => setDarkMode(!darkMode)}><DarkMode active = {darkMode}/></div>
         <div onClick={() => setSubwaySurf(!subwaySurf)}><Subwaysurf active={subwaySurf} /></div>
 
-        <div onClick={() => setLineFollowing(!linefollow)}><LineFollowing active={linefollow} /></div>
-        <div className="bg-[#AABDA0] mb-10 rounded-xl flex items-center justify-center hover:scale-105 duration-300">Animations on/off</div>
-        <div className="bg-[#AABDA0] h-40 mb-10 rounded-xl flex items-center justify-center hover:scale-105 duration-300">Black and white</div>
-        <div className="bg-[#AABDA0] mb-10 rounded-xl flex items-center justify-center hover:scale-105 duration-300">Enable games</div>
+        <div onClick={() => setLineFollow(!lineFollow)}><LineFollowing active={lineFollow} /></div>
+        <div onClick={() => setAnimations(!animations)}><Animations active={animations} /></div>
+        <div onClick={() => setBlackWhite(!bw)}><BlackandWhite active={bw} /></div>
+        <div onClick={() => setGame(!enableGame)}><Enablegames active={enableGame} /></div>
       </div>
-      
     </main>
   );
 }
@@ -53,4 +59,17 @@ function Animations({active} : {active: boolean}){
             <div className = {`mb-10 h-40 rounded-xl flex items-center justify-center hover:scale-105 duration-300 ${active ? "bg-[#F3CBC5]" : "bg-[#AABDA0]"}`}>Animations On/Off</div>
     )
 }
+
+function BlackandWhite({active} : {active: boolean}){
+    return(
+            <div className = {`mb-10 h-40 rounded-xl flex items-center justify-center hover:scale-105 duration-300 ${active ? "bg-[#F3CBC5]" : "bg-[#AABDA0]"}`}>Black and White</div>
+    )
+}
+
+function Enablegames({active} : {active: boolean}){
+    return(
+            <div className = {`mb-10 h-40 rounded-xl flex items-center justify-center hover:scale-105 duration-300 ${active ? "bg-[#F3CBC5]" : "bg-[#AABDA0]"}`}>Enable Games</div>
+    )
+}
+
 export default Accesibility;
