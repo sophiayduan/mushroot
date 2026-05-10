@@ -2,7 +2,7 @@ import { type RouteConfig, index, route } from "@react-router/dev/routes";
 
 export default [
 
-    index("routes/hero/hero.tsx"),
+    index("routes/archive/upload.tsx"),
     route("accesibility","routes/ac/accesibility.tsx", {id: "accesibility-route"}),
     route("archive", "routes/archive/archive.tsx", { id: "archive-route" }),
     route("hero", "routes/hero/hero.tsx", { id: "hero-route" }),

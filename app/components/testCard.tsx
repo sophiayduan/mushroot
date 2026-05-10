@@ -25,7 +25,7 @@ function TestCard({ test }: TestCardProps) {
     }
 
     return (
-        <div className="bg-[#ffefcf] rounded-xl overflow-hidden cursor-pointer" onClick={openPdf}>
+        <div className="bg-[#BECCC0] rounded-xl overflow-hidden cursor-pointer" onClick={openPdf}>
             <div className="w-full h-32 bg-[#e8d5a0]">
                 {thumbnailSrc
                     ? <img src={thumbnailSrc} alt={test.title} className="w-full h-full object-cover" />
@@ -33,20 +33,32 @@ function TestCard({ test }: TestCardProps) {
                 }
             </div>
 
-            <div className="p-3">
-                <div className="font-medium">{test.title}</div>
-                <div className="text-sm text-gray-500">{test.teacherName} · {test.year}</div>
+            <div className="p-2">
+                <div className="text-2xl text-[#435245] px-2 pb-2">{test.title}</div>
+
+                <div className="flex flex-wrap gap-1 px-2 pb-2">
+                    <div className="px-2 py-1 bg-[#f3cbc5] rounded-xl text-[#435245]">
+                        {test.courseCode}
+                    </div>
+                    <div className="px-2 py-1 bg-[#f3cbc5] rounded-xl text-[#435245]">
+                        {test.teacherName}
+                    </div>
+                    <div className="px-2 py-1 bg-[#f3cbc5] rounded-xl text-[#435245]">
+                        {test.year}
+                    </div>
+                </div>
+
+                {test.tags?.length > 0 && (
+                    <div className="flex flex-wrap gap-2 px-3 pb-3">
+                        {test.tags.map(g => (
+                            <div key={g} className="px-2 py-1 bg-[#aabda0] rounded-xl text-xs">
+                                {g}
+                            </div>
+                        ))}
+                    </div>
+                )}
             </div>
 
-            {test.tags?.length > 0 && (
-                <div className="flex flex-wrap gap-2 px-3 pb-3">
-                    {test.tags.map(g => (
-                        <div key={g} className="px-2 py-1 bg-[#aabda0] rounded-xl text-xs">
-                            {g}
-                        </div>
-                    ))}
-                </div>
-            )}
         </div>
     );
 }
