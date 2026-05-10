@@ -1,7 +1,7 @@
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import MergeLogic from "./MergeGame";
-import Navbar from "../../components/navbar/Navbar";
+import Navbar from "../../components/NavBar/Navbar";
 
 function Merge() {
   return (
