@@ -16,12 +16,12 @@ function TestFilter({ courses, selectedCourse, onCourseChange, searchQuery, onSe
                 placeholder="Search by title or teacher…"
                 value={searchQuery}
                 onChange={e => onSearchChange(e.target.value)}
-                className="bg-[#f3cbc5] rounded-lg text-[#435245] px-3 py-2 flex-1"
+                className="bg-[#BECCC0] rounded-lg text-[#435245] px-3 py-2 flex-1"
             />
             <select
                 value={selectedCourse}
                 onChange={e => onCourseChange(e.target.value)}
-                className="bg-[#f3cbc5] rounded-lg text-[#435245] px-3 py-2"
+                className="bg-[#BECCC0] rounded-lg text-[#435245] px-3 py-2"
             >
                 <option value="">All courses</option>
                 {courses.map(c => (
@@ -31,7 +31,7 @@ function TestFilter({ courses, selectedCourse, onCourseChange, searchQuery, onSe
             <select
                 value={sortOrder}
                 onChange={e => onSortChange(e.target.value as "newest" | "oldest")}
-                className="bg-[#f3cbc5] rounded-lg text-[#435245] px-3 py-2"
+                className="bg-[#BECCC0] rounded-lg text-[#435245] px-3 py-2"
             >
                 <option value="newest">Newest first</option>
                 <option value="oldest">Oldest first</option>
