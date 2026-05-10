@@ -1,9 +1,4 @@
-/* uploadpage.css */
-
-.upload-page, .upload-page * {
-    all: revert;
-    box-sizing: border-box;
-}
+/* upload.css */
 
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Patrick+Hand&display=swap');
 
@@ -34,9 +29,9 @@ body {
 .upload-page {
     width: 100%;
     height: 100vh;
-    display: grid;
-    background: var(--cream-dark);
+    background: var(--cream-light);
     overflow: hidden;
+    font-family: "Patrick Hand", cursive;
 }
 
 /* ── MAIN ── */
@@ -47,6 +42,8 @@ body {
     gap: 20px;
     padding: 28px 20px 28px 10px;
     align-items: stretch;
+    align-items: start;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -85,26 +82,27 @@ body {
     align-items: center;
     text-align: center;
     cursor: pointer;
-    transition: background 0.15s;
+    transition: 0.15s;
     position: relative;
+    overflow: hidden;
 }
 
 .thumbnail-card:hover {
     background: var(--green-mid);
 }
 
-.hand-title {
-    font-size: 26px;
-    color: rgba(255, 255, 255, 0.88);
-    margin-bottom: 10px;
+.thumbnail-title {
+    font-size: 36px;
+    color: rgba(255, 255, 255, 0.92);
     font-weight: 400;
+    margin-bottom: 10px;
+    font-family: "Patrick Hand", cursive;
 }
 
-.thumbnail-placeholder {
-    width: 100%;
-    flex: 1;
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.08);
+.thumbnail-subtitle {
+    font-size: 18px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.88);
 }
 
 .thumbnail-preview {
@@ -113,24 +111,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 14px;
-}
-
-.thumbnail-preview:hover {
-    opacity: 0;
-}
-
-.thumbnail-title {
-    font-size: 36px;
-    color: rgba(255, 255, 255, 0.92);
-    font-weight: 400;
-    margin-bottom: 10px;
-}
-
-.thumbnail-subtitle {
-    font-size: 18px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.88);
+    border-radius: 22px;
 }
 
 /* UPLOAD BUTTON */
@@ -147,12 +128,17 @@ body {
     color: rgba(255, 255, 255, 0.92);
     cursor: pointer;
     transition: 0.15s;
-    flex-shrink: 0;
 }
 
 .upload-btn:hover {
     /*transform: translateY(-2px);*/
     background: var(--pink);
+}
+
+.upload-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
 }
 
 /* PDF */
@@ -173,10 +159,15 @@ body {
 }
 
 .pdf-title {
-    font-size: 36px;
+    font-size: 30px;
     color: rgba(255, 255, 255, 0.92);
     font-weight: 400;
     margin-bottom: 10px;
+    font-family: "Patrick Hand", cursive;
+    max-width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .pdf-subtitle {
@@ -185,12 +176,22 @@ body {
     color: rgba(255, 255, 255, 0.88);
 }
 
+/* ERROR */
+
+.error-text {
+    color: #E33B3B;
+    font-size: 14px;
+    text-align: center;
+    font-family: "Patrick Hand", cursive;
+}
+
 /* ── LABELS ── */
 
 .field-label {
     font-size: 22px;
     color: var(--green-mid);
     margin-bottom: -2px;
+    font-family: "Patrick Hand", cursive;
 }
 
 /* ── FIELDS ── */
