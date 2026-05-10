@@ -11,16 +11,14 @@ interface UploadPageProps {
 
 const BACKEND_URL = "http://localhost:8080";
 
-export default function UploadPage({
-                                       sidebarSrc = "/hero-sidebar.png",
-                                       mushroomIconSrc = "/mini-mush-3.png",
-                                   }: UploadPageProps) {
+export default function UploadPage({}: UploadPageProps) {
     // replace your existing state/refs section
     const [thumbnail, setThumbnail] = useState<string | null>(null);
     const [thumbnailFile, setThumbnailFile] = useState<File | null>(null);
     const [pdfFile, setPdfFile] = useState<File | null>(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const [tagsInput, setTagsInput] = useState("");
 
     const [form, setForm] = useState({
         title: "",
@@ -61,6 +59,13 @@ export default function UploadPage({
         fd.append("teacherName", form.teacherName);
         fd.append("data", pdfFile);
 
+        const tags = tagsInput
+            .split("\n")
+            .map(t => t.trim())
+            .filter(t => t.length > 0);
+
+        tags.forEach(tag => fd.append("tags", tag));
+
         // use uploaded thumbnail or fall back to default
         if (thumbnailFile) {
             fd.append("thumbnail", thumbnailFile);
@@ -83,6 +88,8 @@ export default function UploadPage({
             setThumbnail(null);
             setThumbnailFile(null);
             setPdfFile(null);
+            setTagsInput("");
+
         } catch (err: any) {
             setError(err.message);
         } finally {
@@ -92,24 +99,6 @@ export default function UploadPage({
 
     return (
         <div className="upload-page">
-
-            {/* SIDEBAR */}
-            <aside className="sidebar">
-
-                <img
-                    src={sidebarSrc}
-                    alt=""
-                    className="sidebar-bg"
-                    aria-hidden="true"
-                />
-                <img
-                    src="/title-logo.png"
-                    alt="Mush Root"
-                    className="mushroot-logo"
-                />
-                <Navbar mushroomIconSrc={mushroomIconSrc} mushroomCount={0}/>
-
-            </aside>
 
             {/* MAIN */}
             <main className="main-content">
@@ -217,7 +206,7 @@ export default function UploadPage({
 
                     <textarea
                         className="field description-field"
-                        placeholder="text here"
+                        placeholder="text here (optional)"
                     />
 
                     {/* SUBJECT + YEAR */}
@@ -229,13 +218,22 @@ export default function UploadPage({
                                 Subject
                             </label>
 
-                            <input
-                                className="field"
-                                placeholder="Enter your course code"
-                                name="courseCode"
-                                value={form.courseCode}
-                                onChange={handleChange}
-                            />
+                            <div className="select-wrapper">
+
+                                <select className="field select-field" name="courseCode" value={form.courseCode}
+                                        onChange={handleChange}>
+                                    <option value=""></option>
+                                    <option>MHF4U</option>
+                                    <option>SCH4U</option>
+                                    <option>SPH4U</option>
+                                    <option>SBI4U</option>
+                                    <option>ICS4U</option>
+                                    <option>ENG4U</option>
+                                </select>
+
+                                <span className="arrow">⌄</span>
+
+                            </div>
 
                         </div>
 
@@ -277,10 +275,15 @@ export default function UploadPage({
 
                     {/* TAGS */}
                     <label className="field-label">
-                        Tags
+                        Tags <span style={{fontSize: "12px", opacity: 0.6}}>(one per line)</span>
                     </label>
 
-                    <textarea className="field tags-field"/>
+                    <textarea
+                        className="field tags-field"
+                        value={tagsInput}
+                        onChange={e => setTagsInput(e.target.value)}
+                        placeholder={"Trivial\nApplications\nUnit 4"}
+                    />
 
                 </section>
 
