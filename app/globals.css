@@ -9,50 +9,84 @@
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-margarine: "Margarine", sans-serif;
 }
 
-/* ── GLOBAL SIDEBAR (sits on top of every page) ── */
+/* PAGE */
+
+html,
+body,
+#root {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background: #F6F1E8;
+}
+
+/* SIDEBAR */
 
 .global-sidebar {
-    background: transparent;   /* add this */
     position: fixed;
+
     top: 0;
-    left: 0;
+    left: -20px;
+
     width: 255px;
     height: 100vh;
+
     z-index: 100;
+
     overflow: visible;
+
+    background: transparent;
 }
+
+/* TREE IMAGE */
+
 
 .global-sidebar-bg {
     position: absolute;
-    top: 0;
-    left: -10px;              /* back to 0, no shifting */
+
+
     height: 100vh;
-    width: 255px;         /* same as sidebar, no overflow */
-    object-fit: cover;
-    object-position: center top;
-    z-index: 0;
+    width: 700px;         
+
+    object-fit: cover;  
+
+    z-index: 1;
     pointer-events: none;
 }
 
-.global-sidebar-logo {
-    position: absolute;      /* ← change from absolute to fixed */
-    bottom: 3px;
-    left: 0px;           /* ← always 14px from left edge of screen */
-    z-index: 101;
-    pointer-events: none;
-}
+
+/* NAV LAYER */
 
 .mushroom-nav {
     position: relative;
-    z-index: 3;          /* nav buttons always on top of image */
+    z-index: 5;
 }
 
+/* BOTTOM LOGO */
+
+.global-sidebar-logo {
+    position: absolute;
+
+    left: 25px;
+    bottom: 5px;
+
+    width: 230px;
+    height: auto;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+/* MAIN CONTENT */
+
 .global-content {
-    margin-left: 255px;
+    margin-left: 300px;
     min-height: 100vh;
+    width: calc(100% - 300px);
 }
