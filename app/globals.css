@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 @font-face {
   font-family: 'Margarine';
   src: url('/Margarine-Regular.ttf') format('opentype');
@@ -13,4 +12,47 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-margarine: "Margarine", sans-serif;
+}
+
+/* ── GLOBAL SIDEBAR (sits on top of every page) ── */
+
+.global-sidebar {
+    background: transparent;   /* add this */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 255px;
+    height: 100vh;
+    z-index: 100;
+    overflow: visible;
+}
+
+.global-sidebar-bg {
+    position: absolute;
+    top: 0;
+    left: -10px;              /* back to 0, no shifting */
+    height: 100vh;
+    width: 255px;         /* same as sidebar, no overflow */
+    object-fit: cover;
+    object-position: center top;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.global-sidebar-logo {
+    position: absolute;      /* ← change from absolute to fixed */
+    bottom: 3px;
+    left: 0px;           /* ← always 14px from left edge of screen */
+    z-index: 101;
+    pointer-events: none;
+}
+
+.mushroom-nav {
+    position: relative;
+    z-index: 3;          /* nav buttons always on top of image */
+}
+
+.global-content {
+    margin-left: 255px;
+    min-height: 100vh;
 }

@@ -1,7 +1,7 @@
 // uploadpage.tsx
 
 import React, { useRef, useState } from "react";
-import Navbar from "../../components/navbar/Navbar";
+import Navbar from "../../components/NavBar/Navbar";
 import styles from "./uploadpage.module.css";
 
 interface UploadPageProps {
@@ -30,23 +30,6 @@ export default function UploadPage({
   return (
     <div className={styles.uploadPage}>
 
-      {/* SIDEBAR */}
-      <aside className={styles.sidebar}>
-
-        <img
-          src={sidebarSrc}
-          alt=""
-          className={styles.sidebarBg}
-          aria-hidden="true"
-        />
-        <img
-          src="/title-logo.png"
-          alt="Mush Root"
-          className={styles.mushrootLogo}
-        />
-        <Navbar mushroomIconSrc={mushroomIconSrc} mushroomCount={0} />
-
-      </aside>
 
       {/* MAIN */}
       <main className={styles.mainContent}>
