@@ -3,68 +3,73 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&display=swap');
 
 .mushroom-nav {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
-    padding-top: 32px;
-    z-index: 3;
+
+    gap: 16px;
+
+    width: 100%;
+
+    padding-top: 42px;
+
     position: relative;
+    z-index: 5;
 }
 
-/* NAV BUTTONS */
+/* ALL PILLS */
 
 .nav-pill {
-    width: 172px;
-    height: 50px;
+    width: 205px;
+    height: 58px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border-radius: 18px;
-    background: #F8F4EC;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
+    border-radius: 25px;
+
+    background: #FAF4E9;
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.14);
 
     text-decoration: none;
 
     font-family: "Baloo 2", cursive;
-    font-size: 21px;
+    font-size: 25px;
     font-weight: 700;
-    color: #4D5D50;
 
-    transition: 0.15s;
+    color: #465447;
+
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        box-shadow 0.15s ease;
 }
+
+/* HOVER */
 
 .nav-pill:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+
+    box-shadow:
+        0 6px 14px rgba(0,0,0,0.16);
 }
+
+/* ACTIVE */
 
 .nav-pill.active {
-    background: #d6e4d0;
-    color: #2e4a2e;
+    background: #D7E2D0;
+    color: #344635;
 }
 
-/* MUSHROOM COUNTER — sits naturally below Profile, no absolute */
+/* MUSHROOM COUNTER */
 
 .mushroom-pill {
-    width: 172px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+    margin-top: 14px;
 
-    border-radius: 18px;
-    background: #F8F4EC;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
-
-    font-family: "Baloo 2", cursive;
-    font-size: 21px;
-    font-weight: 700;
-    color: #4D5D50;
+    gap: 10px;
 
     cursor: default;
 }
@@ -72,7 +77,8 @@
 /* ICON */
 
 .mush-icon {
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
+
     object-fit: contain;
 }
