@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 import { useState, useEffect } from "react";
+=======
+import { useState } from "react";
+>>>>>>> c4f0059616c6597dacc788f77c9e307ad1801ad1
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 import Navbar from "./components/NavBar/Navbar";
 import "./globals.css";
 
 export default function Root() {
+<<<<<<< HEAD
     const [subwaySurf, setSubwaySurf] = useState(false);
     const [lineFollow, setLineFollow] = useState(false);
     const [cursorY, setCursorY] = useState(0);
@@ -16,6 +21,9 @@ export default function Root() {
         return () => window.removeEventListener("mousemove", handleMouseMove);
     }, []);
 
+=======
+    const [menuOpen, setMenuOpen] = useState(false);
+>>>>>>> c4f0059616c6597dacc788f77c9e307ad1801ad1
 
     return (
     
@@ -43,6 +51,39 @@ export default function Root() {
         {subwaySurf && (
             <div className="fixed inset-0 flex items-end justify-end p-5" onClick={() => setSubwaySurf(false)}>
                 <video src="/SS.mp4" autoPlay muted loop  className="w-65 rounded-xl" />
+            <button
+                className={`hamburger-btn${menuOpen ? " is-open" : ""}`}
+                onClick={() => setMenuOpen(o => !o)}
+                aria-label="Toggle menu"
+            >
+                <span />
+                <span />
+                <span />
+            </button>
+
+            {menuOpen && (
+                <div className="sidebar-overlay" onClick={() => setMenuOpen(false)} />
+            )}
+
+            <div className={`global-sidebar${menuOpen ? " is-open" : ""}`}>
+                <img
+                    src="/hero-sidebar.png"
+                    alt=""
+                    className="global-sidebar-bg"
+                    aria-hidden="true"
+                />
+                <div className="sidebar-scroll">
+                    <Navbar mushroomIconSrc="/mini-mush-3.png" mushroomCount={0} />
+                    <img
+                        src="/title-logo.png"
+                        alt="Mush Root"
+                        className="global-sidebar-logo"
+                    />
+                </div>
+            </div>
+
+            <div className="global-content">
+                <Outlet />
             </div>
         )}  
 

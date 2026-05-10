@@ -35,6 +35,8 @@ public class Test {
     @Column(nullable = false, columnDefinition = "MEDIUMBLOB")
     private byte[] data;
 
-    @Column (nullable = true)
+    @ElementCollection
+    @CollectionTable(name = "test_tags", joinColumns = @JoinColumn(name = "test_id"))
+    @Column(name = "tag")
     private List<String> tags;
 }

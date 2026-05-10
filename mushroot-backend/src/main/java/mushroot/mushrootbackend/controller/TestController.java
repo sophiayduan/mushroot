@@ -54,7 +54,8 @@ public class TestController {
             @RequestParam int year,
             @RequestParam String teacherName,
             @RequestParam MultipartFile thumbnail,
-            @RequestParam MultipartFile data
+            @RequestParam MultipartFile data,
+            @RequestParam(required = false) List<String> tags
     ) throws IOException {
         Test test = new Test();
         test.setTitle(title);
@@ -63,6 +64,7 @@ public class TestController {
         test.setTeacherName(teacherName);
         test.setThumbnail(thumbnail.getBytes());
         test.setData(data.getBytes());
+        test.setTags(tags != null ? tags : List.of());
         return ResponseEntity.ok(testService.createTest(test));
     }
 

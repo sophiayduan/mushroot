@@ -1,7 +1,7 @@
 :root {
     --cream-light: #FAF4E9;
     --cream: #FFF6E4;
-    --cream-dark: #ffefcf;
+    --cream-dark: #FAF4E9;
     --pink: #FDABAB;
     --pink-light: #F3CBC5;
     --green-light: #BECCC0;
@@ -17,6 +17,8 @@
 
 body{
     background-color: var(--cream-dark);
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 /* Hills styling */
@@ -70,7 +72,7 @@ body{
     top: 50%;
     left: 50%;
     height: 80%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-30%) translateY(-50%);
     max-height: 80vh;
     width: auto;
     transition: transform 0.3s ease-in-out;
@@ -78,7 +80,7 @@ body{
 }
 
 img.logo:hover{
-    transform: translateX(-50%) translateY(-52%) rotateX(10deg);
+    transform: translateX(-30%) translateY(-52%) rotateX(10deg);
 }
 
 /* Clouds styling */

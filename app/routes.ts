@@ -6,6 +6,6 @@ export default [
     route("archive", "routes/archive/archive.tsx", { id: "archive-route" }),
     route("hero", "routes/hero/hero.tsx", { id: "hero-route" }),
     route("merge", "routes/merge/merge.tsx", { id: "merge-route" }),
-    route("timer", "routes/timer/timer.tsx", {id : "timer-route"}),
-    route("upload", "routes/upload/UploadPage.tsx", { id: "upload-route" }),
+    route("timer", "routes/timer/timer.tsx", {id: "timer-route"}),
+    route("upload", "routes/archive/upload.tsx", { id: "upload-route" })
 ] satisfies RouteConfig;

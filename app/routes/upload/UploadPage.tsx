@@ -9,7 +9,7 @@ interface UploadPageProps {
 }
 
 export default function UploadPage({
-  sidebarSrc = "/hero-sidebar.png",
+  sidebarSrc = "/side-bar-light.png",
   mushroomIconSrc = "/mini-mush-3.png",
 }: UploadPageProps) {
   const [thumbnail, setThumbnail] = useState<string | null>(null);
