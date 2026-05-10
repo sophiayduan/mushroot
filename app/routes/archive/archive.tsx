@@ -24,7 +24,7 @@ function Archive() {
             .then((data: Test[]) => setTests(data))
             .catch(err => setError(err.message))
             .finally(() => setLoading(false));
-    }, []); // empty array = run once on mount
+    }, []);
 
     const courses = [...new Set(tests.map(t => t.courseCode))].sort();
 
@@ -39,12 +39,11 @@ function Archive() {
         })
         .sort((a, b) => sortOrder === "newest" ? b.year - a.year : a.year - b.year);
 
-
-    if (loading) return <div>Loading...</div>;
-    if (error)   return <div>Error: {error}</div>;
+    if (loading) return <div className="global-content p-8">Loading...</div>;
+    if (error)   return <div className="global-content p-8">Error: {error}</div>;
 
     return (
-        <div className="h-screen bg-[#fff6e4]">
+        <div className="">
             <TestFilter
                 courses={courses}
                 selectedCourse={selectedCourse}
@@ -66,6 +65,5 @@ function Archive() {
         </div>
     );
 }
-
 
 export default Archive;
