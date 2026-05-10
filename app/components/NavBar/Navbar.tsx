@@ -12,7 +12,7 @@ const NAV_ITEMS = [
   { id: "hero-route", label: "Home", to: "/hero" },
   { id: "archive-route", label: "Archives", to: "/archive" },
   { id: "upload-route", label: "Upload", to: "/upload" },
-  { label: "Lock In", to: "/lockin" },
+  { id: "timer-route", label: "Lock In", to: "/timer" },
   { id: "accesibility-route", label: "Settings", to: "/accesibility" },
 ];
 

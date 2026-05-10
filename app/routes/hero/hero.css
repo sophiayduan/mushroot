@@ -17,8 +17,6 @@
 
 body{
     background-color: var(--cream-dark);
-    overflow-x: hidden;
-    overflow-y: hidden;
 }
 
 /* Hills styling */
