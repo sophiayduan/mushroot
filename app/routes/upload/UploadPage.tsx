@@ -1,7 +1,6 @@
 // uploadpage.tsx
 
 import React, { useRef, useState } from "react";
-import Navbar from "../../components/NavBar/Navbar";
 import styles from "./uploadpage.module.css";
 
 interface UploadPageProps {
