@@ -11,6 +11,7 @@
     --green-mid: #7E9278;
     --green-mid-dark: #5B695D;
     --green-dark: #435245;
+    --green-dark1: #435245;
     --red-dark: #B30000;
     --red: #E33B3B;
     --brown: #AE986F;
@@ -106,7 +107,7 @@ body {
     cursor: pointer;
     transition: 0.2s;
     font-family: "Chango", sans-serif;
-    color: white;
+    color: var(--cream);
 }
 
 .startButton {
@@ -115,7 +116,7 @@ body {
 
 .startButton:hover {
     transform: scale(1.05);
-    background-color: var(--green-dark);
+    background-color: #333f34;
 }
 
 .resetButton {

@@ -12,6 +12,31 @@
   --font-margarine: "Margarine", sans-serif;
 }
 
+:root {
+    --cream-light: #FAF4E9;
+    --cream: #FFF6E4;
+    
+    --pink: #FDABAB;
+    --pink-light: #F3CBC5;
+    --green-light: #BECCC0;
+    --green-light1: #BECCC0;
+    --green: #AABDA0;
+    --green-mid: #7E9278;
+    --green-mid-dark: #5B695D;
+    --green-dark: #435245;
+    --red-dark: #B30000;
+    --red: #E33B3B;
+    --brown: #AE986F;
+    --brown-dark: #96876C;
+    --cream-light:    #e9faf5;
+    --cream-dark:     #ffefcf;
+    --pink:           #FDABAB;
+    --pink-light:     #F3CBC5;
+    --green:          #AABDA0;
+    --green-mid:      #7E9278;
+    --green-dark1: #435245;
+}
+
 /* PAGE */
 
 html,
@@ -25,6 +50,17 @@ body,
     background: #F6F1E8;
 }
 
+body.dark {
+    background-color: var(--green-dark1);
+    --green-dark: #ffefcf;
+    --cream: var(--green-dark);
+    --cream-dark: var(--green-dark);
+    --cream-light: var(--green-dark);
+    --pink: var(--red-dark);
+    --pink-light: var(--red);
+    --green-light: var(--green-mid-dark);
+    --green: var(--green-dark);
+}
 
 .hamburger-btn {
     display: none;

@@ -1,10 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 import Navbar from "./components/NavBar/Navbar";
 import "./globals.css";
 
 export default function Root() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [dark, setDark] = useState(false);
+
+    useEffect(() => {
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme === "dark") {
+            setDark(true);
+        }
+    }, []);
+
+    useEffect(() => {
+        document.body.classList.toggle("dark", dark);
+        localStorage.setItem("theme", dark ? "dark" : "light");
+    }, [dark]);
 
     return (
         <html lang="en">
@@ -44,6 +57,9 @@ export default function Root() {
                         alt="Mush Root"
                         className="global-sidebar-logo"
                     />
+                    <button onClick={() => setDark(d => !d)} className="theme-toggle">
+                        {dark ? "Light" : "Dark"}
+                    </button>
                 </div>
             </div>
 
