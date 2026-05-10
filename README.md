@@ -16,6 +16,12 @@ run ``npm run dev``
 ```SQL
 CREATE DATABASE mushroot;
 ```
+#### 1.1 If you run into issues with the columns
+
+run
+```SQL
+ALTER TABLE tests ADD column_name datatype;
+```
 
 ### 2. Setup .env file
 (Make sure that the .gitignore has .env in it)
@@ -25,3 +31,4 @@ In the .env file have DB_PASSWORD=  with your password
 ### 3. To integrate with frontend
 Make sure the backend is running somewhere (either on local or hosted)
 Access the backend with 
+
