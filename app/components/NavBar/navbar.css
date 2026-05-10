@@ -7,11 +7,11 @@
     flex-direction: column;
     align-items: center;
 
-    gap: 16px;
+    gap: 14px;
 
     width: 100%;
 
-    padding-top: 42px;
+    padding-top: 34px;
 
     position: relative;
     z-index: 5;
@@ -20,14 +20,14 @@
 /* ALL PILLS */
 
 .nav-pill {
-    width: 205px;
-    height: 58px;
+    width: 168px;
+    height: 52px;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    border-radius: 25px;
+    border-radius: 20px;
 
     background: #FAF4E9;
 
@@ -37,7 +37,7 @@
     text-decoration: none;
 
     font-family: "Baloo 2", cursive;
-    font-size: 25px;
+    font-size: 22px;
     font-weight: 700;
 
     color: #465447;
@@ -75,7 +75,7 @@
 /* MUSHROOM COUNTER */
 
 .mushroom-pill {
-    margin-top: 14px;
+    margin-top: 10px;
 
     gap: 10px;
 
@@ -85,8 +85,8 @@
 /* ICON */
 
 .mush-icon {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
 
     object-fit: contain;
 }
