@@ -24,9 +24,7 @@ export default function Navbar({
   return (
 
     <nav className="mushroom-nav">
-
       {NAV_ITEMS.map((item) => (
-
         <NavLink
           key={item.label}
           to={item.to}
