@@ -28,9 +28,7 @@ body {
 .uploadPage {
     width: 100%;
     height: 100vh;
-    display: grid;
-    grid-template-columns: 255px 1fr;
-    background: var(--cream-light);
+    background: #FAF4E9;
     overflow: hidden;
 }
 
@@ -40,8 +38,8 @@ body {
     position: relative;
     width: 255px;
     height: 100vh;
-    overflow: visible;   /* allows image to spill right */
-    z-index: 10;         /* sits above the cards */
+    overflow: visible;
+    z-index: 2;             /* lower than 10, just needs to be above main */
 }
 
 .sidebarBg {
@@ -49,11 +47,11 @@ body {
     top: 0;
     left: 0;
     height: 100vh;
-    width: 340px;        /* wider than the sidebar so it overlaps cards */
+    width: 270px;           /* change from 340px to 270px */
     object-fit: cover;
     object-position: left center;
     z-index: 1;
-    pointer-events: none; /* clicks still go through to the main content */
+    pointer-events: none;
 }
 
 .mushrootLogo {
@@ -71,6 +69,7 @@ body {
     gap: 20px;
     padding: 28px 20px 28px 10px;
     align-items: start;
+    height: 100vh;
     overflow: hidden;
 }
 
