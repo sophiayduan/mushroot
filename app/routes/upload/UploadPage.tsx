@@ -1,90 +1,56 @@
-import React, { useState, useRef } from "react";
-import "./UploadPage.css";
- 
-// 🍄 REPLACE these imports with your actual asset paths
-// import logBg from "./assets/log-bg.png";
-// import mushroomIcon from "./assets/mushroom.png";
- 
+// uploadpage.tsx
+
+import React, { useRef, useState } from "react";
+import styles from "./uploadpage.module.css";
+
 interface UploadPageProps {
-  // Pass your image paths as props or swap in imports above
-  logBgSrc?: string;
+  sidebarSrc?: string;
   mushroomIconSrc?: string;
 }
- 
-const NAV_ITEMS = ["Home", "Archives", "Upload", "Lock In", "Profile"];
- 
-const UploadPage: React.FC<UploadPageProps> = ({
-  logBgSrc = "/public/hero-sidebar.png",
-  mushroomIconSrc = "/public/mini-mush-3.png",
-}) => {
+
+export default function UploadPage({
+  sidebarSrc = "/side-bar-light.png",
+  mushroomIconSrc = "/mini-mush-3.png",
+}: UploadPageProps) {
   const [thumbnail, setThumbnail] = useState<string | null>(null);
-  const [dragOver, setDragOver] = useState(false);
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [subject, setSubject] = useState("");
-  const [year, setYear] = useState("");
-  const [teacher, setTeacher] = useState("");
-  const [tags, setTags] = useState("");
- 
+
   const thumbnailInputRef = useRef<HTMLInputElement>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
- 
-  const handleThumbnailUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const pdfInputRef = useRef<HTMLInputElement>(null);
+
+  const handleThumbnailUpload = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
     const file = e.target.files?.[0];
     if (file) {
-      const url = URL.createObjectURL(file);
-      setThumbnail(url);
+      setThumbnail(URL.createObjectURL(file));
     }
   };
- 
-  const handleDrop = (e: React.DragEvent) => {
-    e.preventDefault();
-    setDragOver(false);
-    const file = e.dataTransfer.files?.[0];
-    if (file && file.type === "application/pdf") {
-      console.log("PDF dropped:", file.name);
-      // handle PDF upload logic here
-    }
-  };
- 
+
   return (
-    <div
-      className="upload-page"
-      style={{ backgroundImage: `url(${logBgSrc})` }}
-    >
-      {/* ── LEFT NAV ── */}
-      <nav className="sidebar">
-        {NAV_ITEMS.map((item) => (
-          <button key={item} className="nav-btn">
-            {item}
-          </button>
-        ))}
- 
-        {/* Mushroom counter */}
-        <button className="nav-btn nav-btn--mushroom">
-          <img
-            src={mushroomIconSrc}
-            alt="mushroom"
-            className="mushroom-icon"
-          />
-          <span>00</span>
-        </button>
-      </nav>
- 
-      {/* ── MAIN CONTENT ── */}
-      <main className="main-content">
-        {/* ── MIDDLE COLUMN ── */}
-        <section className="middle-col">
-          {/* Thumbnail box */}
-          <div className="green-box thumbnail-box">
-            <p className="box-label">Thumbnail</p>
- 
+    <div className={styles.uploadPage}>
+
+
+      {/* MAIN */}
+      <main className={styles.mainContent}>
+
+        {/* LEFT */}
+        <section className={styles.leftColumn}>
+
+          {/* THUMBNAIL */}
+          <div className={`${styles.card} ${styles.thumbnailCard}`}>
+
+            <h2 className={styles.handTitle}>thumbnail</h2>
+
             {thumbnail ? (
-              <img src={thumbnail} alt="Thumbnail preview" className="thumbnail-preview" />
+              <img
+                src={thumbnail}
+                alt="thumbnail"
+                className={styles.thumbnailPreview}
+              />
             ) : (
-              <div className="thumbnail-placeholder" />
+              <div className={styles.thumbnailPlaceholder} />
             )}
- 
+
             <input
               ref={thumbnailInputRef}
               type="file"
@@ -92,89 +58,123 @@ const UploadPage: React.FC<UploadPageProps> = ({
               hidden
               onChange={handleThumbnailUpload}
             />
+
             <button
-              className="upload-btn"
+              className={styles.uploadBtn}
               onClick={() => thumbnailInputRef.current?.click()}
             >
               Upload
             </button>
+
           </div>
- 
-          {/* File drop box */}
+
+          {/* PDF */}
           <div
-            className={`green-box drop-box ${dragOver ? "drop-box--active" : ""}`}
-            onDragOver={(e) => { e.preventDefault(); setDragOver(true); }}
-            onDragLeave={() => setDragOver(false)}
-            onDrop={handleDrop}
-            onClick={() => fileInputRef.current?.click()}
+            className={`${styles.card} ${styles.pdfCard}`}
+            onClick={() => pdfInputRef.current?.click()}
           >
-            <input ref={fileInputRef} type="file" accept=".pdf" hidden />
-            <p className="drop-title">Upload here</p>
-            <p className="drop-sub">Upload a PDF or drag and drop your test here!</p>
+
+            <input
+              ref={pdfInputRef}
+              type="file"
+              accept=".pdf"
+              hidden
+            />
+
+            <h2 className={styles.pdfTitle}>Upload here</h2>
+
+            <p className={styles.pdfSubtitle}>
+              Upload a PDF or drag
+              <br />
+              and drop your test
+              <br />
+              here!
+            </p>
+
           </div>
+
         </section>
- 
-        {/* ── RIGHT COLUMN ── */}
-        <section className="right-col">
+
+        {/* RIGHT */}
+        <section className={styles.rightColumn}>
+
+          {/* TITLE */}
           <input
-            className="green-input title-input"
+            className={`${styles.field} ${styles.titleField}`}
             placeholder="Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
           />
- 
-          <label className="field-label">Description</label>
+
+          {/* DESCRIPTION */}
+          <label className={styles.fieldLabel}>
+            Description
+          </label>
+
           <textarea
-            className="green-input description-input"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
+            className={`${styles.field} ${styles.descriptionField}`}
+            placeholder="text here"
           />
- 
-          <div className="row-fields">
-            <div className="field-group">
-              <label className="field-label">Subject</label>
+
+          {/* SUBJECT + YEAR */}
+          <div className={styles.row}>
+
+            <div className={styles.fieldGroup}>
+
+              <label className={styles.fieldLabel}>
+                Subject
+              </label>
+
               <input
-                className="green-input"
+                className={styles.field}
                 placeholder="Enter your course code"
-                value={subject}
-                onChange={(e) => setSubject(e.target.value)}
               />
+
             </div>
- 
-            <div className="field-group">
-              <label className="field-label">Year</label>
-              <div className="select-wrapper green-input">
-                <select
-                  value={year}
-                  onChange={(e) => setYear(e.target.value)}
-                >
-                  <option value="" disabled hidden></option>
-                  {["2021", "2022", "2023", "2024", "2025", "2026"].map((y) => (
-                    <option key={y} value={y}>{y}</option>
-                  ))}
+
+            <div className={`${styles.fieldGroup} ${styles.yearGroup}`}>
+
+              <label className={styles.fieldLabel}>
+                Year
+              </label>
+
+              <div className={styles.selectWrapper}>
+
+                <select className={`${styles.field} ${styles.selectField}`}>
+
+                  <option value=""></option>
+                  <option>2021</option>
+                  <option>2022</option>
+                  <option>2023</option>
+                  <option>2024</option>
+                  <option>2025</option>
+                  <option>2026</option>
+
                 </select>
-                <span className="select-arrow">›</span>
+
+                <span className={styles.arrow}>⌄</span>
+
               </div>
+
             </div>
+
           </div>
- 
+
+          {/* TEACHER */}
           <input
-            className="green-input"
-            placeholder="Enter your teacher's name"
-            value={teacher}
-            onChange={(e) => setTeacher(e.target.value)}
+            className={styles.field}
+            placeholder="Enter your teacher’s name"
           />
- 
-          <label className="field-label">Tags</label>
-          <textarea
-            className="green-input tags-input"
-            value={tags}
-            onChange={(e) => setTags(e.target.value)}
-          />
+
+          {/* TAGS */}
+          <label className={styles.fieldLabel}>
+            Tags
+          </label>
+
+          <textarea className={`${styles.field} ${styles.tagsField}`} />
+
         </section>
+
       </main>
+
     </div>
   );
-};
- 
-export default UploadPage;
+}

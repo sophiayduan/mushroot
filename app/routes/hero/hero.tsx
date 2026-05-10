@@ -76,6 +76,7 @@ function Hero() {
                 </div>
             </div>
             <img className="logo" src="/title-logo.png" alt="mush root text on top of a log" />
+
         </div>
     )
 }

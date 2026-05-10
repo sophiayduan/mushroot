@@ -6,9 +6,12 @@ import mushroot.mushrootbackend.service.TestService;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -44,8 +47,24 @@ public class TestController {
     }
 
     // POST /api/tests
-    @PostMapping
-    public ResponseEntity<Test> createTest(@RequestBody Test test) {
+    @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    public ResponseEntity<Test> createTest(
+            @RequestParam String title,
+            @RequestParam Course_Code courseCode,
+            @RequestParam int year,
+            @RequestParam String teacherName,
+            @RequestParam MultipartFile thumbnail,
+            @RequestParam MultipartFile data,
+            @RequestParam(required = false) List<String> tags
+    ) throws IOException {
+        Test test = new Test();
+        test.setTitle(title);
+        test.setCourseCode(courseCode);
+        test.setYear(year);
+        test.setTeacherName(teacherName);
+        test.setThumbnail(thumbnail.getBytes());
+        test.setData(data.getBytes());
+        test.setTags(tags != null ? tags : List.of());
         return ResponseEntity.ok(testService.createTest(test));
     }
 
@@ -54,5 +73,10 @@ public class TestController {
     public ResponseEntity<Void> deleteTest(@PathVariable Long id) {
         testService.deleteTest(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/ping")
+    public ResponseEntity<String> ping() {
+        return ResponseEntity.ok("pong");
     }
 }
