@@ -224,6 +224,7 @@ export default function UploadPage({}: UploadPageProps) {
                                         onChange={handleChange}>
                                     <option value=""></option>
                                     <option>MHF4U</option>
+                                    <option>MCV4U</option>
                                     <option>SCH4U</option>
                                     <option>SPH4U</option>
                                     <option>SBI4U</option>
