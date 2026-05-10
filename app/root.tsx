@@ -1,8 +1,11 @@
+import { useState } from "react";
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 import Navbar from "./components/NavBar/Navbar";
 import "./globals.css";
 
 export default function Root() {
+    const [menuOpen, setMenuOpen] = useState(false);
+
     return (
         <html lang="en">
         <head>
@@ -13,23 +16,37 @@ export default function Root() {
             <Links />
         </head>
         <body>
-            {/* Sidebar sits fixed on top of every page */}
-            <div className="global-sidebar">
+            <button
+                className={`hamburger-btn${menuOpen ? " is-open" : ""}`}
+                onClick={() => setMenuOpen(o => !o)}
+                aria-label="Toggle menu"
+            >
+                <span />
+                <span />
+                <span />
+            </button>
+
+            {menuOpen && (
+                <div className="sidebar-overlay" onClick={() => setMenuOpen(false)} />
+            )}
+
+            <div className={`global-sidebar${menuOpen ? " is-open" : ""}`}>
                 <img
                     src="/hero-sidebar.png"
                     alt=""
                     className="global-sidebar-bg"
                     aria-hidden="true"
                 />
-                <img
-                    src="/title-logo.png"
-                    alt="Mush Root"
-                    className="global-sidebar-logo"
-                />
-                <Navbar mushroomIconSrc="/mini-mush-3.png" mushroomCount={0} />
+                <div className="sidebar-scroll">
+                    <Navbar mushroomIconSrc="/mini-mush-3.png" mushroomCount={0} />
+                    <img
+                        src="/title-logo.png"
+                        alt="Mush Root"
+                        className="global-sidebar-logo"
+                    />
+                </div>
             </div>
 
-            {/* Every page renders here, pushed right of the sidebar */}
             <div className="global-content">
                 <Outlet />
             </div>

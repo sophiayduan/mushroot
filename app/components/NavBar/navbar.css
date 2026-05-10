@@ -43,18 +43,26 @@
     color: #465447;
 
     transition:
-        transform 0.15s ease,
-        background 0.15s ease,
-        box-shadow 0.15s ease;
+        transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+        background 0.2s ease,
+        box-shadow 0.2s ease,
+        color 0.2s ease,
+        letter-spacing 0.2s ease;
 }
 
 /* HOVER */
 
 .nav-pill:hover {
-    transform: translateY(-2px);
+    transform: translateY(-5px) scale(1.05);
+
+    background: #E8F0E4;
+    color: #2a3a2b;
 
     box-shadow:
-        0 6px 14px rgba(0,0,0,0.16);
+        0 10px 24px rgba(70, 84, 71, 0.22),
+        0 2px 6px rgba(70, 84, 71, 0.12);
+
+    letter-spacing: 0.03em;
 }
 
 /* ACTIVE */
@@ -81,4 +89,42 @@
     height: 26px;
 
     object-fit: contain;
+}
+
+/* TABLET */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .mushroom-nav {
+        padding-top: 28px;
+        gap: 10px;
+    }
+
+    .nav-pill {
+        width: 168px;
+        height: 48px;
+        font-size: 20px;
+        border-radius: 20px;
+    }
+
+    .mush-icon {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+    .mushroom-nav {
+        align-items: flex-start;
+        padding-left: 28px;
+        padding-bottom: 24px;
+        gap: 12px;
+    }
+
+    .nav-pill {
+        width: 155px;
+        height: 52px;
+        font-size: 22px;
+    }
 }
