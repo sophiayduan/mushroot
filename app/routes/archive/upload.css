@@ -1,14 +1,9 @@
-/* uploadpage.css */
-
-.upload-page, .upload-page * {
-    all: revert;
-    box-sizing: border-box;
-}
+/* upload.css */
 
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Patrick+Hand&display=swap');
 
 :root {
-    --cream-light:    #e9faf5;
+    --cream-light:    #FAF4E9;
     --pink:           #FDABAB;
     --pink-light:     #F3CBC5;
     --green:          #AABDA0;
@@ -16,52 +11,14 @@
     --green-dark:     #435245;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    background: var(--cream-light);
-    overflow: hidden;
-    font-family: "Patrick Hand", cursive;
-}
-
 /* ── PAGE ── */
 
 .upload-page {
     width: 100%;
     height: 100vh;
-    display: grid;
-    grid-template-columns: 255px 1fr;
     background: var(--cream-light);
     overflow: hidden;
-}
-
-/* ── SIDEBAR ── */
-
-.sidebar {
-    position: relative;
-    width: 255px;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.sidebar-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: auto;
-    object-fit: contain;
-}
-
-.mushroot-logo {
-    position: absolute;
-    bottom: 10px;
-    left: 14px;
-    z-index: 3;
+    font-family: "Patrick Hand", cursive;
 }
 
 /* ── MAIN ── */
@@ -72,6 +29,7 @@ body {
     gap: 20px;
     padding: 28px 20px 28px 10px;
     align-items: start;
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -110,37 +68,11 @@ body {
     cursor: pointer;
     transition: background 0.15s;
     position: relative;
+    overflow: hidden;
 }
 
 .thumbnail-card:hover {
     background: var(--green-mid);
-}
-
-.hand-title {
-    font-size: 26px;
-    color: rgba(255, 255, 255, 0.88);
-    margin-bottom: 10px;
-    font-weight: 400;
-}
-
-.thumbnail-placeholder {
-    width: 100%;
-    flex: 1;
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.thumbnail-preview {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 14px;
-}
-
-.thumbnail-preview:hover {
-    opacity: 0;
 }
 
 .thumbnail-title {
@@ -148,6 +80,7 @@ body {
     color: rgba(255, 255, 255, 0.92);
     font-weight: 400;
     margin-bottom: 10px;
+    font-family: "Patrick Hand", cursive;
 }
 
 .thumbnail-subtitle {
@@ -156,11 +89,19 @@ body {
     color: rgba(255, 255, 255, 0.88);
 }
 
+.thumbnail-preview {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 22px;
+}
+
 /* UPLOAD BUTTON */
 
 .upload-btn {
-    margin: 12px auto 0 auto;
-    width: 190px;
+    width: 100%;
     height: 52px;
     border: none;
     border-radius: 14px;
@@ -170,12 +111,17 @@ body {
     color: rgba(255, 255, 255, 0.92);
     cursor: pointer;
     transition: 0.15s;
-    flex-shrink: 0;
 }
 
 .upload-btn:hover {
     transform: translateY(-2px);
     background: var(--pink);
+}
+
+.upload-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
 }
 
 /* PDF */
@@ -196,10 +142,15 @@ body {
 }
 
 .pdf-title {
-    font-size: 36px;
+    font-size: 30px;
     color: rgba(255, 255, 255, 0.92);
     font-weight: 400;
     margin-bottom: 10px;
+    font-family: "Patrick Hand", cursive;
+    max-width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .pdf-subtitle {
@@ -208,12 +159,22 @@ body {
     color: rgba(255, 255, 255, 0.88);
 }
 
+/* ERROR */
+
+.error-text {
+    color: #E33B3B;
+    font-size: 14px;
+    text-align: center;
+    font-family: "Patrick Hand", cursive;
+}
+
 /* ── LABELS ── */
 
 .field-label {
     font-size: 22px;
     color: var(--green-mid);
     margin-bottom: -2px;
+    font-family: "Patrick Hand", cursive;
 }
 
 /* ── FIELDS ── */
@@ -300,4 +261,3 @@ body {
 .tags-field {
     height: 110px;
 }
-
