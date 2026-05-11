@@ -223,13 +223,22 @@ export default function UploadPage({}: UploadPageProps) {
                                 <select className="field select-field" name="courseCode" value={form.courseCode}
                                         onChange={handleChange}>
                                     <option value=""></option>
-                                    <option>MHF4U</option>
-                                    <option>MCV4U</option>
-                                    <option>SCH4U</option>
-                                    <option>SPH4U</option>
-                                    <option>SBI4U</option>
-                                    <option>ICS4U</option>
+                                    <option>CHA3U</option>
                                     <option>ENG4U</option>
+                                    <option>ETS4U</option>
+                                    <option>ICS3U</option>
+                                    <option>ICS4U</option>
+                                    <option>MCR3U</option>
+                                    <option>MCV4U</option>
+                                    <option>MHF4U</option>
+
+                                    <option>SBI3U</option>
+                                    <option>SBI4U</option>
+                                    <option>SCH3U</option>
+                                    <option>SCH4U</option>
+                                    <option>SPH3U</option>
+                                    <option>SPH4U</option>
+
                                 </select>
 
                                 <span className="arrow">⌄</span>
