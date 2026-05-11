@@ -100,7 +100,7 @@ export default function UploadPage({}: UploadPageProps) {
     return (
         <div className="upload-page">
 
-            {/* MAIN */}
+           {/* MAIN */}
             <main className="main-content">
 
                 {/* LEFT */}

@@ -14,6 +14,7 @@ const NAV_ITEMS = [
   { id: "upload-route", label: "Upload", to: "/upload" },
   { id: "timer-route", label: "Lock In", to: "/timer" },
   { id: "accesibility-route", label: "Settings", to: "/accesibility" },
+  { id: "merge-route", label: "merge", to: "/merge"},
 ];
 
 export default function Navbar({
@@ -24,9 +25,7 @@ export default function Navbar({
   return (
 
     <nav className="mushroom-nav">
-
       {NAV_ITEMS.map((item) => (
-
         <NavLink
           key={item.label}
           to={item.to}
