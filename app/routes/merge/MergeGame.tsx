@@ -72,6 +72,20 @@ export default function MergeGame() {
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="merge">
+        <div className="clouds">
+          <img className="cloud cat-cloud-1" src="/cat-cloud-1.png" alt="cute cat cloud" />
+          <img className="cloud cat-cloud-2" src="/cat-cloud-2.png" alt="cute cat cloud"/>
+          <img className="cloud cat-cloud-3" src="/cat-cloud-3.png" alt="cute cat cloud"/>
+          <img className="cloud gen-cloud-1" src="/general-cloud-1.png" alt="another normal cloud"/>
+          <img className="cloud gen-cloud-2" src="/general-cloud-2.png" alt="normal cloud"/>
+        </div>
+
+        <div className="hills">
+            <div className="back-hill"></div>
+            <div className="mid-hill"></div>
+            <div className="front-hill"></div>
+        </div>
+
         <button className="spawn-btn" onClick={spawnMushroom}>
           Spawn Mushroom
         </button>
@@ -94,49 +108,49 @@ export default function MergeGame() {
 }
 
 function Zone({
-  cell,
-  index,
-  handleDrop,
-}: {
-  cell: Mushroom | null;
-  index: number;
-  handleDrop: (from: number, to: number) => void;
-}) {
-  const [, drop] = useDrop(() => ({
-    accept: "MUSHROOM",
-    drop: (dragged: { fromIndex: number }) => {
-      handleDrop(dragged.fromIndex, index);
-    },
-  }));
+    cell,
+    index,
+    handleDrop,
+  }: {
+    cell: Mushroom | null;
+    index: number;
+    handleDrop: (from: number, to: number) => void;
+  }) {
+    const [, drop] = useDrop(() => ({
+      accept: "MUSHROOM",
+      drop: (dragged: { fromIndex: number }) => {
+        handleDrop(dragged.fromIndex, index);
+      },
+    }));
 
-  return (
-    <div ref={drop as any} className="grid">
-      {cell && <Item item={cell} index={index} />}
-    </div>
-  );
-}
+    return (
+      <div ref={drop as any} className="grid">
+        {cell && <Item item={cell} index={index} />}
+      </div>
+    );
+  }
 
 function Item({
-  item,
-  index,
-}: {
-  item: Mushroom;
-  index: number;
-}) {
-  const [{ isDragging }, drag] = useDrag(() => ({
-    type: "MUSHROOM",
-    item: { fromIndex: index },
-    collect: (monitor) => ({
-      isDragging: monitor.isDragging(),
-    }),
-  }));
+    item,
+    index,
+  }: {
+    item: Mushroom;
+    index: number;
+  }) {
+    const [{ isDragging }, drag] = useDrag(() => ({
+      type: "MUSHROOM",
+      item: { fromIndex: index },
+      collect: (monitor) => ({
+        isDragging: monitor.isDragging(),
+      }),
+    }));
 
-  return (
-    <img
-      ref={drag as any}
-      src={item.img}
-      alt="mushroom"
-      className="merge-item"
-    />
-  );
+    return (
+      <img
+        ref={drag as any}
+        src={item.img}
+        alt="mushroom"
+        className="merge-item"
+      />
+    );
 }

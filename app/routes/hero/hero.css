@@ -328,3 +328,9 @@ img.logo:hover{
     animation-name: mush-sway-3;
     animation-duration: 25s;
 }
+
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
