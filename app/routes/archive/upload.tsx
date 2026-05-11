@@ -1,7 +1,7 @@
 // uploadpage.tsx
 
-import React, {useRef, useState} from "react";
-import Navbar from "../../components/NavBar/Navbar";
+import React, { useRef, useState } from "react";
+import Navbar from "../../../components/NavBar/Navbar";
 import "./upload.css";
 
 interface UploadPageProps {
@@ -11,7 +11,7 @@ interface UploadPageProps {
 
 const BACKEND_URL = "http://localhost:8080";
 
-export default function UploadPage({}: UploadPageProps) {
+export default function UploadPage({ }: UploadPageProps) {
     // replace your existing state/refs section
     const [thumbnail, setThumbnail] = useState<string | null>(null);
     const [thumbnailFile, setThumbnailFile] = useState<File | null>(null);
@@ -31,7 +31,7 @@ export default function UploadPage({}: UploadPageProps) {
     const pdfInputRef = useRef<HTMLInputElement>(null);
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) {
-        setForm(prev => ({...prev, [e.target.name]: e.target.value}));
+        setForm(prev => ({ ...prev, [e.target.name]: e.target.value }));
     }
 
     const handleThumbnailUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -84,7 +84,7 @@ export default function UploadPage({}: UploadPageProps) {
                 body: fd,
             });
             if (!res.ok) throw new Error(`HTTP ${res.status}`);
-            setForm({title: "", courseCode: "", year: "", teacherName: ""});
+            setForm({ title: "", courseCode: "", year: "", teacherName: "" });
             setThumbnail(null);
             setThumbnailFile(null);
             setPdfFile(null);
@@ -100,7 +100,7 @@ export default function UploadPage({}: UploadPageProps) {
     return (
         <div className="upload-page">
 
-           {/* MAIN */}
+            {/* MAIN */}
             <main className="main-content">
 
                 {/* LEFT */}
@@ -129,15 +129,15 @@ export default function UploadPage({}: UploadPageProps) {
                         />
 
                         {thumbnail ? (
-                            <img src={thumbnail} alt="thumbnail" className="thumbnail-preview"/>
+                            <img src={thumbnail} alt="thumbnail" className="thumbnail-preview" />
                         ) : (
                             <div className="flex flex-col items-center">
                                 <h2 className="thumbnail-title">Thumbnail</h2>
                                 <p className="thumbnail-subtitle">
                                     Upload an image or drag
-                                    <br/>
+                                    <br />
                                     and drop your thumbnail here!
-                                    <br/>
+                                    <br />
                                     (optional)
                                 </p>
                             </div>
@@ -221,7 +221,7 @@ export default function UploadPage({}: UploadPageProps) {
                             <div className="select-wrapper">
 
                                 <select className="field select-field" name="courseCode" value={form.courseCode}
-                                        onChange={handleChange}>
+                                    onChange={handleChange}>
                                     <option value=""></option>
                                     <option>MHF4U</option>
                                     <option>MCV4U</option>
@@ -247,7 +247,7 @@ export default function UploadPage({}: UploadPageProps) {
                             <div className="select-wrapper">
 
                                 <select className="field select-field" name="year" value={form.year}
-                                        onChange={handleChange}>
+                                    onChange={handleChange}>
                                     <option value=""></option>
                                     <option>2021</option>
                                     <option>2022</option>
@@ -276,7 +276,7 @@ export default function UploadPage({}: UploadPageProps) {
 
                     {/* TAGS */}
                     <label className="field-label">
-                        Tags <span style={{fontSize: "12px", opacity: 0.6}}>(one per line)</span>
+                        Tags <span style={{ fontSize: "12px", opacity: 0.6 }}>(one per line)</span>
                     </label>
 
                     <textarea
