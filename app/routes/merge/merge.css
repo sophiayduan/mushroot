@@ -17,7 +17,7 @@
     --brown-dark: #96876C;
 }
 
-body {
+.merge-body {
     margin: 0;
     height: 100vh;
     overflow: hidden;
@@ -36,12 +36,12 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    position: relative;
 }
 
-
-main {
+.merge-main {
     position: relative;
-    z-index: 1;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,23 +53,22 @@ main {
     text-align: center;
 }
 
-h1 {
+.merge-h1 {
     font-family: "Chango", sans-serif;
     margin: 0;
 }
 
 .spawn-btn {
+    position: relative;
+    z-index: 10;
     padding: 10px 20px;
     margin: 10px 0;
-
     font-family: "Chango", sans-serif;
     font-size: 16px;
     color: var(--cream);
-
     background-color: var(--green-dark);
     border: none;
     border-radius: 12px;
-
     transition: all 0.15s ease;
 }
 
@@ -78,29 +77,24 @@ h1 {
 }
 
 .grid-box {
+    position: relative;
+    z-index: 10;
     width: min(85vmin, 420px);
     aspect-ratio: 4 / 4;
     display: grid;
     gap: 8px;
-
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
-
     padding: 10px;
     border-radius: 12px;
-
-    background: linear-gradient(
-        180deg,var(--green-mid-dark) 0%,var(--green-dark) 100%);
-
+    background: linear-gradient(180deg,var(--green-mid-dark) 0%,var(--green-dark) 100%);
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
-.grid {
+.merge-cell {
     background: linear-gradient(180deg,var(--green-light) 0%,var(--green) 100%);
-
     border-radius: 8px;
     box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,188 +108,15 @@ h1 {
     margin: auto;
 }
 
-.stats-box {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 10px;
-}
-
-.score,
-.mush-count {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.mini-mushroom {
-    width: 30px;
-    height: 30px;
-}
-
-.mushrooms {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-}
-
-.hills{
-    width: 100vw;
-    height: 80vh;
-    top: 20vh;
-}
-
-.back-hill{
-    position: absolute;
-    width: 200%;
-    height: 100%;
-    left: -100vw;
-    top: 30vh;
-    border-radius: 50%;
-
-    background: linear-gradient(180deg, var(--green) 0%, var(--green) 50%);
-    box-shadow: 3px 4px 10px 10px rgba(0, 0, 0, 0.25);
-}
-
-.mid-hill{
-    position: absolute;
-    width: 200%;
-    height: 100%;
-    right: -100vw;
-    top: 45vh;
-    border-radius: 50%;
-
-    background: linear-gradient(180deg, var(--green-mid) 0%, var(--green-mid-dark) 50%);
-    box-shadow: 3px 4px 10px 10px rgba(0, 0, 0, 0.25);
-}
-
-.front-hill{
-    position: absolute;
-    width: 200%;
-    height: 100%;
-    left: -50vw;
-    top: 60vh;
-    border-radius: 50%;
-
-    background: linear-gradient(180deg, var(--green-mid-dark) 0%, var(--green-dark) 50%);
-    box-shadow: 3px 4px 10px 10px rgba(0, 0, 0, 0.25);
-
-}
-
 .hills {
     position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-}
-
-main {
-    position: relative;
-    z-index: 2;
-}
-
-.grid-box,
-.spawn-btn,
-.stats-box,
-h1 {
-    position: relative;
-    z-index: 2;
-}
-
-/* Clouds styling */
-
-.cloud {
-    position: absolute;
-    width: auto;
-}
-
-@keyframes catcloud1{
-    0%{
-        left: -25%;
-    }
-    100%{
-        left: 100%;
-    }
-}
-
-.cat-cloud-1{
-    animation-name: catcloud1;
-    animation-duration: 150s;
-    opacity: 60%;
-    height: 25%;
-    top: 0;
-}
-
-@keyframes catcloud2{
-    0%{
-        left: 125%;
-    }
-    100%{
-        left: -25%;
-    }
-}
-.cat-cloud-2{
-    animation-name: catcloud2;
-    animation-duration: 120s;
-    opacity: 50%;
-    height: 20%;
-    top: 5vh;
-}
-
-@keyframes catcloud3{
-    0%{
-        left: 100%;
-    }
-    100%{
-        left: -25%;
-    }
-}
-.cat-cloud-3{
-    animation-name: catcloud3;
-    animation-duration: 100s;
-    opacity: 75%;
-    height: 30%;
-    top: 15vh;
-}
-
-@keyframes gencloud1{
-    0% {
-        left: -25%;
-    }
-
-    100%{
-        left: 100;
-    }
-}
-
-.gen-cloud-1{
-    animation-name: gencloud1;
-    animation-duration: 200s;
-    opacity: 33%;
-    height: 25%;
-    top: 0;
-}
-
-@keyframes gencloud2{
-    0% {
-        left: 100%;
-    }
-
-    100%{
-        left: -33%;
-    }
-}
-
-.gen-cloud-2{
-    animation-name: gencloud2;
-    animation-duration: 200s;
-    opacity: 38%;
-    height: 30%;
-    top: 15vh;
-}
-
-html, body {
-    margin: 0;
+    width: 100%;
     height: 100%;
-    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.back-hill, .mid-hill, .front-hill {
+    z-index: 0;
 }

@@ -1,7 +1,7 @@
 import "./archive.css";
 import TestCard from "../../components/testCard";
 import TestFilter from "../../components/testFilter";
-import type {Test} from "../../types/test.tsx";
+import type { Test } from "../../../types/test";
 
 import { useState, useEffect } from "react";
 
@@ -43,7 +43,7 @@ function Archive() {
         .sort((a, b) => sortOrder === "newest" ? b.year - a.year : a.year - b.year);
 
     if (loading) return <div className="global-content p-8">Loading...</div>;
-    if (error)   return <div className="global-content p-8">Error: {error}</div>;
+    if (error) return <div className="global-content p-8">Error: {error}</div>;
 
     return (
         <div className="">
@@ -64,7 +64,7 @@ function Archive() {
                 ? <div className="p-8 text-center text-[#AABDA0]">No tests found</div>
                 : <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
                     {filteredTests.map(test => (
-                        <TestCard key={test.id} test={test}/>
+                        <TestCard key={test.id} test={test} />
                     ))}
                 </div>
             }
