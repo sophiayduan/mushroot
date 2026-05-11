@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Patrick+Hand&display=swap');
 
 :root {
-    --cream-light:    #FAF4E9;
+    --cream-light:    #ffefcf;
     --pink:           #FDABAB;
     --pink-light:     #F3CBC5;
     --green:          #AABDA0;
@@ -104,6 +104,7 @@ body {
     display: flex;
     flex-direction: column;
 }
+
 
 .handTitle {
     font-size: 26px;
