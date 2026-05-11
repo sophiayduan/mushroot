@@ -14,6 +14,7 @@ function Archive() {
     const [selectedCourse, setSelectedCourse] = useState("");
     const [searchQuery, setSearchQuery] = useState("");
     const [sortOrder, setSortOrder] = useState<"newest" | "oldest">("newest");
+    const [selectedTag, setSelectedTag] = useState("");
 
     useEffect(() => {
         fetch(`${BACKEND_URL}/api/tests`)
@@ -26,16 +27,18 @@ function Archive() {
             .finally(() => setLoading(false));
     }, []);
 
+    const tags = [...new Set(tests.flatMap(t => t.tags ?? []))].sort();
     const courses = [...new Set(tests.map(t => t.courseCode))].sort();
 
     const filteredTests = tests
         .filter(test => {
             const matchesCourse = !selectedCourse || test.courseCode === selectedCourse;
+            const matchesTag = !selectedTag || test.tags?.includes(selectedTag);
             const q = searchQuery.toLowerCase();
             const matchesSearch = !q
                 || test.title.toLowerCase().includes(q)
                 || test.teacherName.toLowerCase().includes(q);
-            return matchesCourse && matchesSearch;
+            return matchesCourse && matchesTag && matchesSearch;
         })
         .sort((a, b) => sortOrder === "newest" ? b.year - a.year : a.year - b.year);
 
@@ -52,6 +55,9 @@ function Archive() {
                 onSearchChange={setSearchQuery}
                 sortOrder={sortOrder}
                 onSortChange={setSortOrder}
+                tags={tags}
+                selectedTag={selectedTag}
+                onTagChange={setSelectedTag}
             />
 
             {filteredTests.length === 0

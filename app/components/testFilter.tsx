@@ -6,9 +6,12 @@ type TestFilterProps = {
     onSearchChange: (query: string) => void;
     sortOrder: "newest" | "oldest";
     onSortChange: (order: "newest" | "oldest") => void;
+    tags: string[];
+    selectedTag: string;
+    onTagChange: (tag: string) => void;
 }
 
-function TestFilter({ courses, selectedCourse, onCourseChange, searchQuery, onSearchChange, sortOrder, onSortChange }: TestFilterProps) {
+function TestFilter({ courses, selectedCourse, onCourseChange, searchQuery, onSearchChange, sortOrder, onSortChange, tags, selectedTag, onTagChange }: TestFilterProps) {
     return (
         <div className="flex gap-3 p-4 flex-wrap">
             <input
@@ -26,6 +29,16 @@ function TestFilter({ courses, selectedCourse, onCourseChange, searchQuery, onSe
                 <option value="">All courses</option>
                 {courses.map(c => (
                     <option key={c} value={c}>{c}</option>
+                ))}
+            </select>
+            <select
+                value={selectedTag}
+                onChange={e => onTagChange(e.target.value)}
+                className="bg-[#BECCC0] rounded-lg text-[#435245] px-3 py-2"
+            >
+                <option value="">All tags</option>
+                {tags.map(t => (
+                    <option key={t} value={t}>{t}</option>
                 ))}
             </select>
             <select
