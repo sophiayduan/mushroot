@@ -7,7 +7,6 @@ function Merge() {
   return (
     <DndProvider backend={HTML5Backend}>
       <MergeLogic />
-      <Navbar/>
     </DndProvider>
   );
 }
