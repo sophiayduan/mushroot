@@ -36,7 +36,7 @@ export default function Root() {
 
             {subwaySurf && (
                 <div className="fixed inset-0 flex items-end justify-end p-5" onClick={() => setSubwaySurf(false)}>
-                    <video src="/SS.mp4" autoPlay muted loop className="w-65 rounded-xl" />
+                    <video src="/SS2.mp4" autoPlay muted loop className="w-65 rounded-xl" />
                 </div>
             )}
 
