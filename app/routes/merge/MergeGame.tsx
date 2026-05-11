@@ -110,7 +110,7 @@ function Zone({
   }));
 
   return (
-    <div ref={drop} className="grid">
+    <div ref={drop as any} className="grid">
       {cell && <Item item={cell} index={index} />}
     </div>
   );
@@ -133,7 +133,7 @@ function Item({
 
   return (
     <img
-      ref={drag}
+      ref={drag as any}
       src={item.img}
       alt="mushroom"
       className="merge-item"
